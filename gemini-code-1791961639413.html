@@ -1,0 +1,2371 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đề Cương 8 Tuần Kỳ 1 - Lớp 10 (Test 1) - Ms Lê Hằng English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-purple: #7952B3;
+      --primary-coral: #FF5E62;
+      --primary-yellow: #FFD166;
+      --primary-cyan: #06D6A0;
+      --accent-blue: #0984E3;
+      --correct-green: #00BA66;
+      --correct-bg: #E8F8F0;
+      --wrong-red: #FA5252;
+      --wrong-bg: #FFEAEA;
+      --card-bg: #FFFFFF;
+      --text-main: #2D3436;
+      --text-muted: #636E72;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', 'Quicksand', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #FFEFBA 0%, #FFDFBA 8%, #E3F2FD 35%, #CBE3F7 70%, #A0C4E2 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+      color: var(--text-main);
+      padding-bottom: 120px;
+    }
+
+    /* Ambient Skyline & Road Decorations */
+    .city-skyline {
+      position: fixed;
+      bottom: 45px;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.32;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 400px 120px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' width='400' height='120'%3E%3Cpath fill='%236C8EB5' d='M0,120 L0,60 L20,60 L20,30 L50,30 L50,120 L70,120 L70,45 L100,45 L100,120 L130,120 L130,15 L160,15 L160,120 L190,120 L190,50 L220,50 L220,120 L250,120 L250,25 L280,25 L280,120 L310,120 L310,40 L340,40 L340,120 L370,120 L370,55 L400,55 L400,120 Z'/%3E%3C/svg%3E");
+    }
+
+    .bottom-road {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 46px;
+      background: #4A4A4A;
+      border-top: 6px solid #00BA66;
+      z-index: 1;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    }
+    .road-curb {
+      position: absolute;
+      top: -12px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FF4757 0px, #FF4757 24px, #FFFFFF 24px, #FFFFFF 48px);
+    }
+    .road-lines {
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FFFFFF 0px, #FFFFFF 35px, transparent 35px, transparent 70px);
+      opacity: 0.85;
+    }
+
+    /* Floating Clouds */
+    .bg-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .floating-cloud {
+      position: absolute;
+      opacity: 0.45;
+      animation: floatCloud 25s linear infinite;
+    }
+    @keyframes floatCloud {
+      0% { transform: translateX(-150px); }
+      100% { transform: translateX(110vw); }
+    }
+
+    /* Main Container */
+    .app-container {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 16px 14px;
+    }
+
+    /* Top Compact Teacher Announcement Banner */
+    .top-announcement {
+      background: #FFFFFF;
+      border-radius: 30px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 12px;
+      border: 1.5px solid #FFDEE9;
+    }
+    .announcement-text {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .teacher-badge {
+      background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+      color: #FFF;
+      padding: 3px 12px;
+      border-radius: 18px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+    }
+
+    /* Header Unit Banner */
+    .unit-hero-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(116, 185, 255, 0.18);
+      border: 2px solid #E3F2FD;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .unit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(90deg, #0984E3, #00CEC9);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .unit-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #2D3436;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .unit-subtitle {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #636E72;
+    }
+    .unit-icon-box {
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #E0F7FA, #FFF9C4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border: 2px solid #FFFFFF;
+    }
+
+    /* Top Sticky Stats Bar */
+    .top-stats-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 10px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border: 2px solid #FFF0F5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .pill-counter-left {
+      background: #FF5E62;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #D63031;
+    }
+    .bar-track {
+      flex: 1;
+      height: 16px;
+      background: #EBF3FA;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #E1EDF8;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #FDCB6E, #00D26A);
+      border-radius: 10px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pill-counter-right {
+      background: #00D26A;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    /* Urgent Reminder Card */
+    .warning-box {
+      background: #FFF9E6;
+      border: 3px dashed #FDCB6E;
+      border-left: 8px solid #F39C12;
+      border-radius: 20px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(243, 156, 18, 0.12);
+    }
+    .warning-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #D35400;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .warning-text {
+      font-size: 0.95rem;
+      color: #4A3E1F;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+    .warning-subtext {
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: #C0392B;
+      font-weight: 800;
+    }
+
+    /* READING PASSAGE BLOCK */
+    .reading-passage-card {
+      background: #FFFDF8;
+      border: 3px solid #FDCB6E;
+      border-radius: 26px;
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 28px rgba(253, 203, 110, 0.25);
+      position: relative;
+    }
+    .passage-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #F1C40F;
+    }
+    .passage-title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #D35400;
+    }
+    .passage-scope-badge {
+      background: #F39C12;
+      color: #FFF;
+      font-size: 0.82rem;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 14px;
+      box-shadow: 0 2px 0 #D35400;
+    }
+    .passage-intro-text {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #4B4B4B;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .passage-blank {
+      display: inline-block;
+      min-width: 68px;
+      padding: 1px 8px;
+      margin: 0 4px;
+      background: #FFF3CD;
+      border: 1.5px dashed #F39C12;
+      border-radius: 8px;
+      font-weight: 900;
+      color: #D35400;
+      text-align: center;
+    }
+    .passage-prompt-banner {
+      margin-top: 16px;
+      background: linear-gradient(90deg, #0984E3, #00CEC9);
+      color: #FFF;
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Embedded passage toggle inside question cards */
+    .btn-toggle-passage {
+      background: #EDF2F7;
+      color: #2B6CB0;
+      border: 1.5px solid #CBD5E0;
+      border-radius: 12px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+    .btn-toggle-passage:hover {
+      background: #E2E8F0;
+      border-color: #0984E3;
+      color: #0984E3;
+    }
+    .collapse-passage-box {
+      display: none;
+      background: #FFFDF9;
+      border: 2px dashed #CBD5E0;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    /* Quiz Card */
+    .quiz-card {
+      background: #FFFFFF;
+      border-radius: 26px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 3px solid #F0F4F8;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .quiz-card:hover {
+      box-shadow: 0 14px 38px rgba(116, 185, 255, 0.2);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .q-number-pill {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.9rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      box-shadow: 0 3px 0 #0767B1;
+    }
+    .q-tag-pill {
+      background: #FFF3E0;
+      color: #E65100;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 4px 12px;
+      border-radius: 16px;
+      border: 1px solid #FFE0B2;
+    }
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #2D3436;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+    .q-text u, .opt-text u {
+      color: #FF3838;
+      font-weight: 900;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+
+    /* 3D Option Buttons */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 600px) {
+      .options-grid.grid-2col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .option-btn {
+      position: relative;
+      background: #FFFFFF;
+      border: 2.5px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 14px 18px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #2D3436;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 5px 0 #CBD5E1;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.015);
+      border-color: #0984E3;
+      box-shadow: 0 7px 0 #0767B1;
+      background: #F8FBFE;
+    }
+    .option-btn:active:not(:disabled) {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #CBD5E1;
+    }
+    .opt-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #F1F2F6;
+      color: #57606F;
+      font-weight: 900;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* Option States */
+    .option-btn.selected-correct {
+      background: #E8F8F0 !important;
+      border-color: var(--correct-green) !important;
+      color: #0E6251 !important;
+      box-shadow: 0 5px 0 #00A853 !important;
+    }
+    .option-btn.selected-correct .opt-key {
+      background: var(--correct-green) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.selected-wrong {
+      background: #FFEAEA !important;
+      border-color: var(--wrong-red) !important;
+      color: #922B21 !important;
+      box-shadow: 0 5px 0 #D63031 !important;
+      animation: shakeAnim 0.4s ease-in-out;
+    }
+    .option-btn.selected-wrong .opt-key {
+      background: var(--wrong-red) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.show-truth {
+      border-color: var(--correct-green) !important;
+      background: #F0FFF4 !important;
+      box-shadow: 0 4px 0 #00A853 !important;
+    }
+    .option-btn.show-truth .opt-key {
+      background: #00BA66 !important;
+      color: #FFF !important;
+    }
+
+    @keyframes shakeAnim {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    /* Explanation Container */
+    .explanation-container {
+      display: none;
+      margin-top: 20px;
+      background: #FFFFFF;
+      border: 2px dashed #FFB8B8;
+      border-radius: 22px;
+      padding: 20px;
+      position: relative;
+      animation: slideInDown 0.35s ease;
+      box-shadow: 0 6px 20px rgba(255, 94, 98, 0.08);
+    }
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .exp-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FF5E62;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .exp-trans-box {
+      background: #FFFDF0;
+      border-left: 6px solid #FDCB6E;
+      border-radius: 16px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2D3436;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(253, 203, 110, 0.15);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .exp-section-title {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #2D3436;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: 620px) {
+      .exp-grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .exp-card-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.03);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+    .exp-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .card-word {
+      font-weight: 800;
+      font-size: 1.02rem;
+    }
+    .card-word.word-wrong {
+      color: #0984E3;
+    }
+    .card-word.word-correct {
+      color: #00BA66;
+    }
+
+    .badge-pill {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-pill-wrong {
+      background: #F1F2F6;
+      color: #57606F;
+    }
+    .badge-pill-correct {
+      background: #E8F8F0;
+      color: #00A853;
+      border: 1px solid #A3E9C3;
+    }
+    .card-meaning {
+      color: #B33939;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .exp-block {
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .rule-tag {
+      background: #FFF3CD;
+      color: #856404;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-right: 6px;
+      display: inline-block;
+    }
+    .highlight-green-tag {
+      background: #D4EDDA;
+      color: #155724;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .wrong-key-pill {
+      background: #FFEAEA;
+      color: #D63031;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    /* Submit Area */
+    .submit-area {
+      text-align: center;
+      margin: 35px 0 60px 0;
+    }
+    .btn-submit-main {
+      background: #00D26A;
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      font-weight: 900;
+      padding: 16px 48px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #00A853, 0 14px 25px rgba(0, 210, 106, 0.4);
+      transition: all 0.15s ease;
+      letter-spacing: 0.5px;
+    }
+    .btn-submit-main:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 11px 0 #00A853, 0 18px 30px rgba(0, 210, 106, 0.45);
+    }
+    .btn-submit-main:active {
+      transform: translateY(4px);
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    /* Score Modal Popup */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 52, 54, 0.75);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 16px;
+    }
+    .modal-overlay.active {
+      display: flex;
+      animation: modalFadeIn 0.3s ease;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .score-modal {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 520px;
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      border: 4px solid #0984E3;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes modalPop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .modal-trophy {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      animation: bounceTrophy 1.5s infinite ease-in-out;
+    }
+    @keyframes bounceTrophy {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .score-huge {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #0984E3;
+      margin: 10px 0;
+      line-height: 1;
+    }
+    .score-fraction {
+      font-size: 1.2rem;
+      color: #636E72;
+      font-weight: 800;
+    }
+    .feedback-box {
+      background: #F8F9FE;
+      border: 2px dashed #0984E3;
+      border-radius: 18px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .feedback-teacher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 900;
+      color: #0984E3;
+      font-size: 1rem;
+    }
+    .feedback-quote {
+      font-size: 1.02rem;
+      color: #2D3436;
+      line-height: 1.55;
+      font-weight: 700;
+      font-style: italic;
+    }
+    .btn-modal-close {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 14px 34px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #0767B1;
+      transition: all 0.15s ease;
+      margin: 6px;
+    }
+    .btn-modal-close:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 0 #0767B1;
+    }
+    .btn-modal-close:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #0767B1;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    @media (max-width: 600px) {
+      .app-container { padding: 10px; }
+      .quiz-card { padding: 18px 14px; }
+      .q-text { font-size: 1.05rem; }
+      .option-btn { font-size: 0.95rem; padding: 12px 14px; }
+      .btn-submit-main { font-size: 1.1rem; padding: 14px 32px; }
+      .unit-title { font-size: 1.3rem; }
+      .reading-passage-card { padding: 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="bg-elements" id="bgElements"></div>
+  <div class="city-skyline"></div>
+  <div class="bottom-road">
+    <div class="road-curb"></div>
+    <div class="road-lines"></div>
+  </div>
+
+  <div class="app-container">
+
+    <!-- Top Compact Teacher Announcement Banner -->
+    <div class="top-announcement">
+      <div class="announcement-text">
+        <span>👩‍🏫 Giáo viên tạo: <strong>Ms Lê Hằng English</strong></span>
+        <span class="teacher-badge">Master of English</span>
+      </div>
+      <div style="font-size: 0.82rem; color: #FF5E62; font-weight: 800;">
+        ⚡ ĐỀ CƯƠNG 8 TUẦN KỲ 1 - LỚP 10 (TEST 1 - 40 CÂU)
+      </div>
+    </div>
+
+    <!-- Header Unit Banner -->
+    <div class="unit-hero-card">
+      <div>
+        <div class="unit-badge">
+          <span>🏫 THPT NGÔ THÌ NHẬM · NĂM HỌC 2026 - 2027</span>
+        </div>
+        <h1 class="unit-title">Đề Cương 8 Tuần Kỳ 1 - Lớp 10 (Test 1)</h1>
+        <div class="unit-subtitle">
+          Kiến thức Unit 1 & Unit 2: Family Life · Humans and The Environment · Present Tenses · Passive Voice
+        </div>
+      </div>
+      <div class="unit-icon-box">
+        🏡
+      </div>
+    </div>
+
+    <!-- Top Sticky Bar -->
+    <div class="top-stats-bar">
+      <div class="pill-counter-left" id="starCounter">
+        <span>⭐</span>
+        <span id="correctScore">0</span><span>/40</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" id="progressBar"></div>
+      </div>
+      <div class="pill-counter-right" id="progressPill">
+        <span id="answeredCount">0</span><span>/40</span>
+      </div>
+    </div>
+
+    <!-- Urgent Warning Box -->
+    <div class="warning-box">
+      <div class="warning-title">
+        <span>⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</span>
+      </div>
+      <div class="warning-text">
+        Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên.
+      </div>
+      <div class="warning-subtext">
+        👉 Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!<br>
+        👇 <strong>Kéo tới đâu, làm tới đó! *</strong>
+      </div>
+    </div>
+
+    <!-- Quiz Cards Container -->
+    <div id="quizContainer"></div>
+
+    <!-- Submit Area -->
+    <div class="submit-area">
+      <button class="btn-submit-main" id="btnSubmit" onclick="calculateAndShowResult()">
+        🎉 NỘP BÀI & XEM TỔNG KẾT 🎉
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Score Modal Popup -->
+  <div class="modal-overlay" id="scoreModal">
+    <div class="score-modal">
+      <div class="modal-trophy" id="modalTrophy">🏆</div>
+      <h2 style="color: #2D3436; font-size: 1.5rem; font-weight: 900;">KẾT QUẢ BÀI THI</h2>
+      <div class="score-huge" id="modalPercent">100%</div>
+      <div class="score-fraction" id="modalFraction">Đúng 40 / 40 câu</div>
+
+      <div class="feedback-box">
+        <div class="feedback-teacher">
+          <span>👩‍🏫 Lời nhận xét từ <strong>Ms Lê Hằng English</strong>:</span>
+        </div>
+        <div class="feedback-quote" id="modalTeacherQuote">
+          "Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!"
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-modal-close" onclick="closeModal()">Đóng & Xem lại bài</button>
+        <button class="btn-modal-close" style="background: #00C9A7; box-shadow: 0 5px 0 #009688;" onclick="restartQuiz()">Làm lại bài thi 🔄</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* AUDIO GENERATION ENGINE */
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playDing() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.type = 'triangle';
+      osc1.frequency.setValueAtTime(659.25, now);
+      gain1.gain.setValueAtTime(0.25, now);
+      gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      osc1.start(now);
+      osc1.stop(now + 0.35);
+
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(987.77, now + 0.1);
+      gain2.gain.setValueAtTime(0.3, now + 0.1);
+      gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+      osc2.connect(gain2);
+      gain2.connect(audioCtx.destination);
+      osc2.start(now + 0.1);
+      osc2.stop(now + 0.6);
+    }
+
+    function playWrongSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+
+      const notes = [320, 260, 210];
+      notes.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, now + i * 0.14);
+        gain.gain.setValueAtTime(0.2, now + i * 0.14);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (i + 1) * 0.14);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.14);
+        osc.stop(now + (i + 1) * 0.14);
+      });
+    }
+
+    /* CONFETTI BURST EFFECT */
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti(count = 70) {
+      const colors = ['#0984E3', '#FDCB6E', '#00C9A7', '#00D26A', '#FF4757', '#FF9FF3', '#6C5CE7'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 320,
+          y: window.innerHeight * 0.35 + (Math.random() - 0.5) * 100,
+          w: Math.random() * 10 + 6,
+          h: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 14,
+          vy: Math.random() * -12 - 5,
+          rot: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 12,
+          gravity: 0.35,
+          opacity: 1
+        });
+      }
+      if (!isAnimatingConfetti) {
+        animateConfetti();
+      }
+    }
+
+    let isAnimatingConfetti = false;
+    function animateConfetti() {
+      if (confettiParticles.length === 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isAnimatingConfetti = false;
+        return;
+      }
+      isAnimatingConfetti = true;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = confettiParticles.length - 1; i >= 0; i--) {
+        const p = confettiParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.rot += p.rotSpeed;
+        p.opacity -= 0.012;
+
+        if (p.opacity <= 0 || p.y > window.innerHeight) {
+          confettiParticles.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+
+    function initBackgroundElements() {
+      const container = document.getElementById('bgElements');
+      const cloudSvg = '<svg width="120" height="70" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>';
+
+      for (let i = 0; i < 4; i++) {
+        const cloud = document.createElement('div');
+        cloud.className = 'floating-cloud';
+        cloud.style.top = `${12 + i * 20}%`;
+        cloud.style.animationDuration = `${24 + i * 8}s`;
+        cloud.style.animationDelay = `${i * 6}s`;
+        cloud.innerHTML = cloudSvg;
+        container.appendChild(cloud);
+      }
+    }
+
+    /* DATA: PASSAGES & 40 QUESTIONS */
+    const passagesData = {
+      "coffee_break": {
+        "title": "GIVE YOURSELF A COFFEE BREAK!",
+        "badge": "QUẢNG CÁO / THÔNG BÁO (CÂU 16 - 18)",
+        "intro": "Read the following advertisement/announcement and mark the letter A, B, C, or D on your answer sheet to indicate the correct option that best fits each of the numbered blanks from 16 to 18:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.85; font-size: 1.06rem; color: #2D3436;\"><div style=\"text-align: center; font-weight: 900; font-size: 1.35rem; color: #D35400; margin-bottom: 12px;\">☕ GIVE YOURSELF A COFFEE BREAK! ☕</div><p style=\"margin-bottom: 10px;\"><b>THINK BETTER!</b><br>Stop working <span class=\"passage-blank\">(16) ______</span> a while and take a cheerful cup of coffee. Your mind is clearer and solutions are nearer to you.</p><p style=\"margin-bottom: 10px;\"><b>WORK BETTER!</b><br>Get ready for your work with <span class=\"passage-blank\">(17) ______</span> fragrant cup of coffee. Its gentle stimulation is your cue for better work.</p><p><b>FEEL BETTER!</b><br>Stop getting tired with the kind of black or brown liquid known as coffee. As long as you take it, your boredom and <span class=\"passage-blank\">(18) ______</span> will be gone.</p></div>"
+      },
+      "children_chores": {
+        "title": "CHILDREN & HOUSEHOLD CHORES",
+        "badge": "ĐIỀN TỪ ĐOẠN VĂN (CÂU 19 - 23)",
+        "intro": "Read the following passage and mark the letter A, B, C, or D to indicate the correct word or phrase that best fits each of the numbered blanks from 19 to 23:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.9; font-size: 1.06rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 12px;\">Children can learn a lot from doing household chores. Doing chores helps children learn about what they need to do to care <span class=\"passage-blank\">(19) ______</span> themselves, a home and a family. They learn skills <span class=\"passage-blank\">(20) ______</span> they can use in their adult lives like preparing meals, cleaning, organising and gardening. Being involved in chores also gives children experience of relationship skills like communicating clearly, negotiating, cooperating and working as <span class=\"passage-blank\">(21) ______</span> team.</p><p>And when children contribute to family life, they might feel competent and responsible. Even if they don’t enjoy the chore, when they keep going, they can feel <span class=\"passage-blank\">(22) ______</span> that they’ve finished the task. Sharing housework can also help families work better and reduce family stress. When children help out, chores get done sooner <span class=\"passage-blank\">(23) ______</span> parents have less to do. This frees up time for the family to do fun things together.</p></div>"
+      },
+      "family_types": {
+        "title": "FAMILY TYPES AROUND THE WORLD",
+        "badge": "ĐỌC HIỂU ĐOẠN VĂN (CÂU 24 - 28)",
+        "intro": "Read the following passage and mark the letter A, B, C, or D on your answer sheet to indicate the correct answer to each of the questions from 24 to 28:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.9; font-size: 1.06rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 12px;\">Family types vary in different countries and among different cultures. In Western, industrialized societies, the nuclear family ranks as the most common family type. It consists of a father, a mother and their children. But nuclear families exist together with many other types of family units. In the single-parent family, for example, a mother or a father heads the family alone. A <b style=\"color: #D63031; background: #FFEAEA; padding: 2px 6px; border-radius: 6px;\">blended</b> family is formed when a divorced or widowed parent remarries. As divorce rates have risen, the number of single-parent and blended families has increased.</p><p>In many parts of the world, parents and children live together with other family members under the same roof. These complex families usually contain several generations of family members, including grandparents, parents and children. They may also include brothers or sisters and their families, uncles, aunts and cousins. Even when relatives do not live together, they still consider themselves members of the same extended family includes grandparents, uncles, aunts and cousins.</p></div>"
+      }
+    };
+
+    const quizData = [
+      {
+        "id": 1,
+        "type": "Ngữ âm (Pronunciation - Nguyên âm 'i')",
+        "question": "Question 1: Mark the letter A, B, C or D to indicate the word whose underlined part differs from the other three in pronunciation:",
+        "subtext": "A. housew<u>i</u>fe &nbsp;&nbsp;&nbsp; B. <u>i</u>nterested &nbsp;&nbsp;&nbsp; C. op<u>i</u>nion &nbsp;&nbsp;&nbsp; D. d<u>i</u>fferent",
+        "options": [
+          {"key": "A", "text": "housew<u>i</u>fe"},
+          {"key": "B", "text": "<u>i</u>nterested"},
+          {"key": "C", "text": "op<u>i</u>nion"},
+          {"key": "D", "text": "d<u>i</u>fferent"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Chọn từ có phần gạch chân phát âm khác với ba từ còn lại.",
+        "analysis": [
+          {"word": "housewife", "badge": "âm /aɪ/", "badgeType": "correct", "note": "= /ˈhaʊswaɪf/ (n: nội trợ) - chữ 'i' phát âm là nguyên âm đôi /aɪ/"},
+          {"word": "interested", "badge": "âm /ɪ/", "badgeType": "wrong", "note": "= /ˈɪntrəstɪd/ (adj: quan tâm) - chữ 'i' phát âm là /ɪ/"},
+          {"word": "opinion", "badge": "âm /ɪ/", "badgeType": "wrong", "note": "= /əˈpɪnjən/ (n: ý kiến) - chữ 'i' phát âm là /ɪ/"},
+          {"word": "different", "badge": "âm /ɪ/", "badgeType": "wrong", "note": "= /ˈdɪfrənt/ (adj: khác biệt) - chữ 'i' phát âm là /ɪ/"}
+        ],
+        "whyCorrect": {"rule": "Quy tắc phát âm nguyên âm 'i':", "content": "Từ <span class='highlight-green-tag'>housewife</span> có cấu trúc i + phụ âm + e nên chữ 'i' phát âm là <b>/aɪ/</b>. Ba từ còn lại đều phát âm là âm ngắn <b>/ɪ/</b>."},
+        "whyWrong": [
+          {"word": "interested", "reason": "phát âm là /ɪ/."},
+          {"word": "opinion", "reason": "phát âm là /ɪ/."},
+          {"word": "different", "reason": "phát âm là /ɪ/."}
+        ]
+      },
+      {
+        "id": 2,
+        "type": "Ngữ âm (Pronunciation - Đuôi -s)",
+        "question": "Question 2: Mark the letter A, B, C or D to indicate the word whose underlined part differs from the other three in pronunciation:",
+        "subtext": "A. support<u>s</u> &nbsp;&nbsp;&nbsp; B. earn<u>s</u> &nbsp;&nbsp;&nbsp; C. divide<u>s</u> &nbsp;&nbsp;&nbsp; D. prefer<u>s</u>",
+        "options": [
+          {"key": "A", "text": "support<u>s</u>"},
+          {"key": "B", "text": "earn<u>s</u>"},
+          {"key": "C", "text": "divide<u>s</u>"},
+          {"key": "D", "text": "prefer<u>s</u>"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Chọn từ có phần gạch chân đuôi -s phát âm khác với ba từ còn lại.",
+        "analysis": [
+          {"word": "supports", "badge": "đuôi -s: /s/", "badgeType": "correct", "note": "= /səˈpɔːts/ (v: ủng hộ) - kết thúc bằng âm vô thanh /t/ → phát âm là /s/"},
+          {"word": "earns", "badge": "đuôi -s: /z/", "badgeType": "wrong", "note": "= /ɜːnz/ (v: kiếm tiền) - kết thúc bằng âm hữu thanh /n/ → phát âm là /z/"},
+          {"word": "divides", "badge": "đuôi -s: /z/", "badgeType": "wrong", "note": "= /dɪˈvaɪdz/ (v: phân chia) - kết thúc bằng âm hữu thanh /d/ → phát âm là /z/"},
+          {"word": "prefers", "badge": "đuôi -s: /z/", "badgeType": "wrong", "note": "= /prɪˈfɜːz/ (v: thích hơn) - kết thúc bằng nguyên âm dài /ɜː/ → phát âm là /z/"}
+        ],
+        "whyCorrect": {"rule": "Quy tắc phát âm đuôi -s/-es:", "content": "<span class='highlight-green-tag'>supports</span> tận cùng bằng phụ âm vô thanh <b>/t/</b> (thuộc nhóm /p, t, k, f, θ/) nên đuôi -s phát âm là <b>/s/</b>. Ba từ còn lại kết thúc bằng âm hữu thanh nên phát âm là <b>/z/</b>."},
+        "whyWrong": [
+          {"word": "earns", "reason": "tận cùng bằng /n/ → phát âm là /z/."},
+          {"word": "divides", "reason": "tận cùng bằng /d/ → phát âm là /z/."},
+          {"word": "prefers", "reason": "tận cùng bằng âm hữu thanh → phát âm là /z/."}
+        ]
+      },
+      {
+        "id": 3,
+        "type": "Cụm động từ (Phrasal Verbs)",
+        "question": "Question 3: He quickly ______ his toys and puts them away before bedtime.",
+        "options": [
+          {"key": "A", "text": "cheers up"},
+          {"key": "B", "text": "grows up"},
+          {"key": "C", "text": "picks up"},
+          {"key": "D", "text": "look after"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Cậu bé nhanh chóng nhặt gọn đồ chơi của mình lên và cất chúng đi trước giờ đi ngủ.",
+        "analysis": [
+          {"word": "cheers up", "badge": "làm vui lên", "badgeType": "wrong", "note": "= cổ vũ, khích lệ tinh thần ai đó"},
+          {"word": "grows up", "badge": "lớn lên, trưởng thành", "badgeType": "wrong", "note": "= nội động từ, không đi với tân ngữ 'his toys'"},
+          {"word": "picks up", "badge": "nhặt lên, thu dọn", "badgeType": "correct", "note": "= pick up toys: nhặt đồ chơi lên (đồng thời chia ngôi He thêm -s)"},
+          {"word": "look after", "badge": "chăm sóc (chưa chia -s)", "badgeType": "wrong", "note": "= sai nghĩa và chưa thêm -s cho chủ ngữ 'He'"}
+        ],
+        "whyCorrect": {"rule": "Phrasal verb chủ đề sinh hoạt gia đình:", "content": "Cụm động từ <span class='highlight-green-tag'>picks up</span> (nhặt lên, thu dọn) hoàn toàn phù hợp về nghĩa khi đi với 'his toys and puts them away' (nhặt đồ chơi lên và cất gọn đi)."},
+        "whyWrong": [
+          {"word": "cheers up", "reason": "nghĩa là làm phấn chấn tinh thần."},
+          {"word": "grows up", "reason": "nghĩa là trưởng thành."},
+          {"word": "look after", "reason": "nghĩa là trông nom và thiếu -s."}
+        ]
+      },
+      {
+        "id": 4,
+        "type": "Từ vựng (Vocabulary - Family Life)",
+        "question": "Question 4: They have plenty of ______ to enjoy games and outdoor activities on Sundays.",
+        "options": [
+          {"key": "A", "text": "value"},
+          {"key": "B", "text": "housework"},
+          {"key": "C", "text": "gratitude"},
+          {"key": "D", "text": "playtime"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Họ có rất nhiều thời gian vui chơi để tận hưởng các trò chơi và hoạt động ngoài trời vào các ngày Chủ nhật.",
+        "analysis": [
+          {"word": "value", "badge": "giá trị", "badgeType": "wrong", "note": "= giá trị đạo đức/vật chất"},
+          {"word": "housework", "badge": "việc nhà", "badgeType": "wrong", "note": "= có nhiều việc nhà thì không thể tận hưởng trò chơi"},
+          {"word": "gratitude", "badge": "lòng biết ơn", "badgeType": "wrong", "note": "= không phù hợp ngữ cảnh vui chơi"},
+          {"word": "playtime", "badge": "thời gian vui chơi", "badgeType": "correct", "note": "= thời gian rảnh dành cho trò chơi và hoạt động giải trí"}
+        ],
+        "whyCorrect": {"rule": "Ngữ cảnh từ vựng:", "content": "Để 'enjoy games and outdoor activities' (tận hưởng trò chơi và hoạt động ngoài trời), họ cần có nhiều <span class='highlight-green-tag'>playtime</span> (thời gian vui chơi giải trí)."},
+        "whyWrong": [
+          {"word": "value", "reason": "sai ngữ nghĩa."},
+          {"word": "housework", "reason": "việc nhà đối lập với việc đi chơi ngoài trời."},
+          {"word": "gratitude", "reason": "lòng biết ơn."}
+        ]
+      },
+      {
+        "id": 5,
+        "type": "Thì Hiện Tại Đơn & Hiện Tại Tiếp Diễn",
+        "question": "Question 5: My parents ______ away on business, so now my grandmother ______ us.",
+        "options": [
+          {"key": "A", "text": "is/ looks after"},
+          {"key": "B", "text": "are/ looks after"},
+          {"key": "C", "text": "are/ is looking after"},
+          {"key": "D", "text": "are/ are looking after"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Bố mẹ tôi đang đi công tác xa, vì vậy hiện giờ bà của tôi đang trông nom chúng tôi.",
+        "analysis": [
+          {"word": "is/ looks after", "badge": "sai to be số ít", "badgeType": "wrong", "note": "= 'My parents' là số nhiều không đi với 'is'"},
+          {"word": "are/ looks after", "badge": "sai thì ở vế sau", "badgeType": "wrong", "note": "= vế sau có trạng từ 'now' chỉ hành động tạm thời đang diễn ra"},
+          {"word": "are/ is looking after", "badge": "chuẩn ngữ pháp", "badgeType": "correct", "note": "= parents (số nhiều) + are; now + grandmother (số ít) + is looking after"},
+          {"word": "are/ are looking after", "badge": "sai to be vế sau", "badgeType": "wrong", "note": "= 'my grandmother' là chủ ngữ số ít, không dùng 'are'"}
+        ],
+        "whyCorrect": {"rule": "Phối hợp Hiện tại đơn & Hiện tại tiếp diễn:", "content": "Vế 1: Chủ ngữ số nhiều <b>My parents</b> đi với to be <b>are</b> (be away on business). Vế 2: Có dấu hiệu <b>now</b> (bây giờ) diễn tả hành động tạm thời đang diễn ra và chủ ngữ số ít <b>my grandmother</b> nên dùng <span class='highlight-green-tag'>is looking after</span>."},
+        "whyWrong": [
+          {"word": "Option A", "reason": "'parents' là số nhiều không dùng 'is'."},
+          {"word": "Option B", "reason": "có 'now' chỉ hành động tạm thời nên không dùng Hiện tại đơn 'looks after'."},
+          {"word": "Option D", "reason": "'my grandmother' là số ít không dùng 'are looking'."}
+        ]
+      },
+      {
+        "id": 6,
+        "type": "Thì Hiện Tại Đơn (Present Simple) & Collocations",
+        "question": "Question 6: My dad ______ money as a breadwinner while my mom ______ most of the housework as a housewife.",
+        "options": [
+          {"key": "A", "text": "earns/ is doing"},
+          {"key": "B", "text": "is earning/ does"},
+          {"key": "C", "text": "is earning/ is doing"},
+          {"key": "D", "text": "earns/ does"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Bố tôi kiếm tiền với vai trò là trụ cột gia đình trong khi mẹ tôi làm hầu hết các công việc nhà với vai trò là người nội trợ.",
+        "analysis": [
+          {"word": "earns/ is doing", "badge": "lệch thì", "badgeType": "wrong", "note": "= câu diễn tả vai trò cố định lâu dài của cả bố và mẹ"},
+          {"word": "is earning/ does", "badge": "lệch thì", "badgeType": "wrong", "note": "= không dùng tiếp diễn cho nghề nghiệp/vai trò thường xuyên"},
+          {"word": "is earning/ is doing", "badge": "sai thì tiếp diễn", "badgeType": "wrong", "note": "= đây là sự thật hiển nhiên về phân công lao động trong gia đình"},
+          {"word": "earns/ does", "badge": "Hiện tại đơn chuẩn", "badgeType": "correct", "note": "= earns money (kiếm tiền) và does housework (làm việc nhà)"}
+        ],
+        "whyCorrect": {"rule": "Thì Hiện tại đơn diễn tả thói quen/vai trò cố định:", "content": "Câu miêu tả sự phân công vai trò thường xuyên, lâu dài trong gia đình (breadwinner & housewife). Cả hai vế đều chia ở thì <b>Hiện tại đơn</b> với chủ ngữ ngôi thứ 3 số ít: <span class='highlight-green-tag'>earns / does</span>."},
+        "whyWrong": [
+          {"word": "Option A, B, C", "reason": "dùng thì Hiện tại tiếp diễn là sai vì câu không chỉ hành động đang diễn ra tại thời điểm nói."}
+        ]
+      },
+      {
+        "id": 7,
+        "type": "Giới từ đi kèm tính từ (Adjective + Preposition)",
+        "question": "Question 7: I am so proud ______ what I have done to support my parents.",
+        "options": [
+          {"key": "A", "text": "with"},
+          {"key": "B", "text": "for"},
+          {"key": "C", "text": "of"},
+          {"key": "D", "text": "to"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Tôi rất tự hào về những gì mình đã làm để phụ giúp bố mẹ.",
+        "analysis": [
+          {"word": "with", "badge": "với", "badgeType": "wrong", "note": "= không đi với proud"},
+          {"word": "for", "badge": "cho", "badgeType": "wrong", "note": "= không đi với proud"},
+          {"word": "of", "badge": "be proud of", "badgeType": "correct", "note": "= tự hào về ai/điều gì"},
+          {"word": "to", "badge": "đến", "badgeType": "wrong", "note": "= chỉ đi với động từ nguyên thể (proud to do sth)"}
+        ],
+        "whyCorrect": {"rule": "Cấu trúc cố định với 'proud':", "content": "Tính từ <b>proud</b> đi với giới từ <b>of</b> trước danh từ hoặc mệnh đề danh từ (what I have done): <span class='highlight-green-tag'>be proud of somebody/something</span> (tự hào về...)."},
+        "whyWrong": [
+          {"word": "with / for", "reason": "sai giới từ cố định."},
+          {"word": "to", "reason": "sau chỗ trống là mệnh đề 'what I have done' chứ không phải động từ nguyên mẫu."}
+        ]
+      },
+      {
+        "id": 8,
+        "type": "Cụm từ cố định (Collocations - Family Life)",
+        "question": "Question 8: Spending quality time together helps build strong family ______ and create lasting memories.",
+        "options": [
+          {"key": "A", "text": "experiences"},
+          {"key": "B", "text": "bonds"},
+          {"key": "C", "text": "success"},
+          {"key": "D", "text": "respect"}
+        ],
+        "correct": "B",
+        "trans": "Dịch: Dành thời gian chất lượng bên nhau giúp xây dựng sự gắn kết gia đình bền chặt và tạo nên những kỷ niệm lâu dài.",
+        "analysis": [
+          {"word": "experiences", "badge": "trải nghiệm", "badgeType": "wrong", "note": "= không kết hợp với 'build strong family...'"},
+          {"word": "bonds", "badge": "family bonds (sự gắn kết)", "badgeType": "correct", "note": "= build strong family bonds: xây dựng mối liên kết/gắn kết gia đình bền chặt"},
+          {"word": "success", "badge": "sự thành công", "badgeType": "wrong", "note": "= không đi với strong family"},
+          {"word": "respect", "badge": "sự tôn trọng", "badgeType": "wrong", "note": "= thường dùng show/earn respect"}
+        ],
+        "whyCorrect": {"rule": "Collocation trọng tâm Unit 1 (Family Life):", "content": "Cụm từ cố định cực kỳ quan trọng trong Unit 1: <span class='highlight-green-tag'>build strong family bonds</span> = xây dựng sợi dây gắn kết tình cảm gia đình bền chặt."},
+        "whyWrong": [
+          {"word": "experiences", "reason": "sai kết hợp từ."},
+          {"word": "success", "reason": "sai ngữ nghĩa."},
+          {"word": "respect", "reason": "không đi với 'build strong family...'."}
+        ]
+      },
+      {
+        "id": 9,
+        "type": "Sắp xếp hội thoại (Dialogue Arrangement)",
+        "question": "Question 9: Mark the letter A, B, C, or D to indicate the correct arrangement of the sentences to make a meaningful dialogue:",
+        "subtext": "<b>a. Jack:</b> That's great! Helping with chores shows respect and builds strong family bonds.<br><b>b. Lucy:</b> Yes, I often do the laundry and tidy up the kitchen. My parents really appreciate it.<br><b>c. Jack:</b> Hey Lucy, do you help your parents with the household chores?",
+        "options": [
+          {"key": "A", "text": "c - a - b"},
+          {"key": "B", "text": "b - a - c"},
+          {"key": "C", "text": "c - b - a"},
+          {"key": "D", "text": "b - c - a"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Sắp xếp các câu để tạo thành đoạn hội thoại có nghĩa giữa Jack và Lucy.",
+        "analysis": [
+          {"word": "c - a - b", "badge": "sai trình tự", "badgeType": "wrong", "note": "= Jack hỏi xong tự khen 'That's great!' trước khi Lucy trả lời"},
+          {"word": "b - a - c", "badge": "câu trả lời đứng đầu", "badgeType": "wrong", "note": "= câu 'Yes, I often...' không thể đứng mở đầu khi chưa có câu hỏi"},
+          {"word": "c - b - a", "badge": "trình tự chuẩn logic", "badgeType": "correct", "note": "= Jack đặt câu hỏi Yes/No (c) → Lucy trả lời Yes và kể việc làm (b) → Jack khen ngợi (a)"},
+          {"word": "b - c - a", "badge": "sai mở đầu", "badgeType": "wrong", "note": "= trả lời trước khi hỏi"}
+        ],
+        "whyCorrect": {"rule": "Mạch hội thoại Hỏi - Đáp - Phản hồi:", "content": "Mở đầu bằng câu chào và câu hỏi Yes/No của Jack (<b>c</b>: <i>Hey Lucy, do you help...</i>) → Lucy trả lời trực tiếp (<b>b</b>: <i>Yes, I often do the laundry...</i>) → Jack khen ngợi phản hồi (<b>a</b>: <i>That's great!...</i>). Thứ tự đúng: <span class='highlight-green-tag'>c - b - a</span>."},
+        "whyWrong": [
+          {"word": "Option A", "reason": "chưa có câu trả lời của Lucy mà Jack đã khen 'That's great!'."},
+          {"word": "Option B, D", "reason": "đưa câu trả lời 'Yes' lên đầu đoạn hội thoại."}
+        ]
+      },
+      {
+        "id": 10,
+        "type": "Sắp xếp đoạn văn (Paragraph Arrangement)",
+        "question": "Question 10: Mark the letter A, B, C, or D to indicate the correct arrangement of the sentences to make a meaningful paragraph:",
+        "subtext": "<b>a.</b> Firstly, we should clean up all areas regularly. For example, we can organise clean-up activities at weekends.<br><b>b.</b> There are three things we can do to improve the environment in our school.<br><b>c.</b> Secondly, we ought to set up more rubbish bins. For instance, we can put more rubbish bins in the school gate, in front of each building, or in the playground.<br><b>d.</b> In conclusion, we can improve the environment in our school in many ways and even small actions can make a big difference.<br><b>e.</b> Finally, we should plant more trees. To give an example, we can encourage students to plant trees or flowers in our school because this reduces CO2 and makes the air clean.",
+        "options": [
+          {"key": "A", "text": "e - a - d - b - c"},
+          {"key": "B", "text": "e - b - a - d - c"},
+          {"key": "C", "text": "e - b - a - c - d"},
+          {"key": "D", "text": "b - a - c - e - d"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Sắp xếp các câu để tạo thành đoạn văn hoàn chỉnh về bảo vệ môi trường trường học.",
+        "analysis": [
+          {"word": "Option A, B, C", "badge": "đưa 'Finally' lên đầu", "badgeType": "wrong", "note": "= từ nối 'Finally' (Cuối cùng là) không bao giờ đứng đầu đoạn văn"},
+          {"word": "b - a - c - e - d", "badge": "cấu trúc chuẩn 100%", "badgeType": "correct", "note": "= Câu chủ đề (b) → Firstly (a) → Secondly (c) → Finally (e) → In conclusion (d)"},
+          {"word": "Từ nối gợi ý", "badge": "Firstly - Secondly - Finally", "badgeType": "correct", "note": "= hệ thống từ nối liệt kê cực kỳ rõ ràng"},
+          {"word": "Câu kết", "badge": "In conclusion (d)", "badgeType": "correct", "note": "= luôn nằm ở vị trí cuối cùng của đoạn"}
+        ],
+        "whyCorrect": {"rule": "Cấu trúc đoạn văn liệt kê luận điểm:", "content": "Mở đoạn bằng câu chủ đề (<b>b</b>: <i>There are three things...</i>) → Luận điểm 1 (<b>a</b>: <i>Firstly...</i>) → Luận điểm 2 (<b>c</b>: <i>Secondly...</i>) → Luận điểm 3 (<b>e</b>: <i>Finally...</i>) → Câu kết luận (<b>d</b>: <i>In conclusion...</i>). Đáp án chuẩn: <span class='highlight-green-tag'>b - a - c - e - d</span>."},
+        "whyWrong": [
+          {"word": "Option A, B, C", "reason": "đặt câu 'e' (Finally) lên đầu tiên là sai nguyên tắc hành văn."}
+        ]
+      },
+      {
+        "id": 11,
+        "type": "Sắp xếp lá thư xin việc (Letter Arrangement)",
+        "question": "Question 11: Mark the letter A, B, C, or D to indicate the correct arrangement of the sentences to make a meaningful formal letter:",
+        "subtext": "<b>a.</b> I am writing to apply for a volunteer position at the head office. I heard the announcement about this position on radio last Sunday.<br><b>b.</b> I am available for an interview on any weekday from 8.00 am to 11.00 am. If my application is successful, I can start on 15th January 2022.<br><b>c.</b> I am interested in the job duties at the head office. I want to help you welcome guests and visitors to the office and receive and sort donations.<br><b>d.</b> Yours faithfully,<br><b>e.</b> I look forward to hearing from you.<br><b>f.</b> Dear Sir or Madam,",
+        "options": [
+          {"key": "A", "text": "e - b - a - c - f - d"},
+          {"key": "B", "text": "e - c - f - d - b - a"},
+          {"key": "C", "text": "b - c - d - e - a - f"},
+          {"key": "D", "text": "f - a - c - b - e - d"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Sắp xếp các phần để tạo thành một bức thư trang trọng xin làm tình nguyện viên.",
+        "analysis": [
+          {"word": "Option A, B", "badge": "sai lời chào mở đầu", "badgeType": "wrong", "note": "= lá thư phải bắt đầu bằng 'Dear Sir or Madam,' (f)"},
+          {"word": "Option C", "badge": "đặt 'Dear' ở cuối", "badgeType": "wrong", "note": "= sai hoàn toàn bố cục thư tín"},
+          {"word": "f - a - c - b - e - d", "badge": "bố cục thư chuẩn mực", "badgeType": "correct", "note": "= Lời chào (f) → Lý do viết thư (a) → Mối quan tâm (c) → Lịch phỏng vấn (b) → Mong phản hồi (e) → Ký tên (d)"},
+          {"word": "Cặp mở - kết", "badge": "f đầu - d cuối", "badgeType": "correct", "note": "= Dear Sir or Madam (đầu) đi với Yours faithfully (cuối)"}
+        ],
+        "whyCorrect": {"rule": "Bố cục thư trang trọng (Formal Application Letter):", "content": "1. Lời chào mở đầu (<b>f</b>: <i>Dear Sir or Madam,</i>)<br>2. Nêu lý do viết thư ứng tuyển (<b>a</b>: <i>I am writing to apply...</i>)<br>3. Nêu sự quan tâm tới công việc cụ thể (<b>c</b>: <i>I am interested in the job duties...</i>)<br>4. Thông báo thời gian rảnh phỏng vấn và ngày bắt đầu (<b>b</b>: <i>I am available for an interview...</i>)<br>5. Câu kết mong nhận hồi âm (<b>e</b>: <i>I look forward to hearing from you.</i>)<br>6. Lời chào kết thư (<b>d</b>: <i>Yours faithfully,</i>).<br>Thứ tự đúng: <span class='highlight-green-tag'>f - a - c - b - e - d</span>."},
+        "whyWrong": [
+          {"word": "Option A, B, C", "reason": "không bắt đầu bằng lời chào 'Dear Sir or Madam,' (f)."}
+        ]
+      },
+      {
+        "id": 12,
+        "type": "Từ đồng nghĩa (CLOSEST in meaning)",
+        "question": "Question 12: Mark the letter A, B, C or D to indicate the word(s) CLOSEST in meaning to the underlined word(s):<br>We always <u>split</u> the housework equally - my mom cooks, my dad cleans the house and I do the washing-up.",
+        "options": [
+          {"key": "A", "text": "join"},
+          {"key": "B", "text": "break"},
+          {"key": "C", "text": "share"},
+          {"key": "D", "text": "pick up"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Chúng tôi luôn phân chia công việc nhà một cách công bằng - mẹ tôi nấu ăn, bố tôi dọn dẹp nhà cửa và tôi rửa bát.",
+        "analysis": [
+          {"word": "join", "badge": "tham gia", "badgeType": "wrong", "note": "= tham gia vào một hoạt động/câu lạc bộ"},
+          {"word": "break", "badge": "làm vỡ, đập vỡ", "badgeType": "wrong", "note": "= làm hỏng đồ vật"},
+          {"word": "share", "badge": "chia sẻ, phân chia", "badgeType": "correct", "note": "= split/divide/share the housework: cùng chia sẻ, phân công việc nhà"},
+          {"word": "pick up", "badge": "nhặt lên, đón ai", "badgeType": "wrong", "note": "= không đồng nghĩa với split"}
+        ],
+        "whyCorrect": {"rule": "Từ đồng nghĩa chủ đề Family Life:", "content": "Trong ngữ cảnh công việc gia đình, động từ <b>split</b> (phân chia, chia đều) đồng nghĩa trực tiếp với <span class='highlight-green-tag'>share</span> (chia sẻ, cùng gánh vác)."},
+        "whyWrong": [
+          {"word": "join", "reason": "nghĩa là gia nhập."},
+          {"word": "break", "reason": "nghĩa là làm gãy, vỡ."},
+          {"word": "pick up", "reason": "nghĩa là nhặt lên."}
+        ]
+      },
+      {
+        "id": 13,
+        "type": "Từ đồng nghĩa (CLOSEST in meaning)",
+        "question": "Question 13: Mark the letter A, B, C or D to indicate the word(s) CLOSEST in meaning to the underlined word(s):<br>It is advisable that everyone in family shares the household <u>duties</u>.",
+        "options": [
+          {"key": "A", "text": "views"},
+          {"key": "B", "text": "ideas"},
+          {"key": "C", "text": "jobs"},
+          {"key": "D", "text": "chores"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Mọi người trong gia đình nên cùng nhau chia sẻ các công việc/bổn phận trong nhà.",
+        "analysis": [
+          {"word": "views", "badge": "quan điểm, tầm nhìn", "badgeType": "wrong", "note": "= ý kiến cá nhân"},
+          {"word": "ideas", "badge": "ý tưởng", "badgeType": "wrong", "note": "= sáng kiến"},
+          {"word": "jobs", "badge": "nghề nghiệp kiếm tiền", "badgeType": "wrong", "note": "= công việc ngoài xã hội"},
+          {"word": "chores", "badge": "việc vặt trong nhà", "badgeType": "correct", "note": "= household duties = household chores (công việc nhà)"}
+        ],
+        "whyCorrect": {"rule": "Cụm danh từ đồng nghĩa:", "content": "Cụm từ <b>household duties</b> (nhiệm vụ/công việc gia đình) đồng nghĩa hoàn toàn với cụm <span class='highlight-green-tag'>household chores</span>."},
+        "whyWrong": [
+          {"word": "views / ideas", "reason": "mang nghĩa quan điểm, ý tưởng."},
+          {"word": "jobs", "reason": "chỉ nghề nghiệp làm việc hưởng lương."}
+        ]
+      },
+      {
+        "id": 14,
+        "type": "Từ trái nghĩa (OPPOSITE in meaning)",
+        "question": "Question 14: Mark the letter A, B, C or D to indicate the word(s) OPPOSITE in meaning to the underlined word(s):<br>Parents should <u>encourage</u> their children to share the housework for the goodness of the whole family.",
+        "options": [
+          {"key": "A", "text": "support"},
+          {"key": "B", "text": "motivate"},
+          {"key": "C", "text": "inspire"},
+          {"key": "D", "text": "prevent"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Cha mẹ nên khuyến khích con cái chia sẻ việc nhà vì lợi ích của cả gia đình.",
+        "analysis": [
+          {"word": "support", "badge": "ủng hộ (đồng nghĩa)", "badgeType": "wrong", "note": "= mang nghĩa tích cực tương đồng với encourage"},
+          {"word": "motivate", "badge": "thúc đẩy (đồng nghĩa)", "badgeType": "wrong", "note": "= tạo động lực (đồng nghĩa)"},
+          {"word": "inspire", "badge": "truyền cảm hứng", "badgeType": "wrong", "note": "= khích lệ tinh thần"},
+          {"word": "prevent", "badge": "ngăn cản (TRÁI NGHĨA)", "badgeType": "correct", "note": "= ngăn chặn, cản trở (trái nghĩa với khuyến khích)"}
+        ],
+        "whyCorrect": {"rule": "Tìm từ TRÁI NGHĨA (OPPOSITE):", "content": "Động từ <b>encourage</b> nghĩa là khuyến khích, động viên. Từ trái nghĩa hoàn toàn là <span class='highlight-green-tag'>prevent</span> (ngăn cản, cản trở)."},
+        "whyWrong": [
+          {"word": "support / motivate / inspire", "reason": "đều là các từ đồng nghĩa hoặc cùng trường nghĩa tích cực với 'encourage'."}
+        ]
+      },
+      {
+        "id": 15,
+        "type": "Từ trái nghĩa (OPPOSITE in meaning)",
+        "question": "Question 15: Mark the letter A, B, C or D to indicate the word(s) OPPOSITE in meaning to the underlined word(s):<br>In my family, my father always takes charge of doing the <u>heavy</u> lifting.",
+        "options": [
+          {"key": "A", "text": "strong"},
+          {"key": "B", "text": "hard"},
+          {"key": "C", "text": "light"},
+          {"key": "D", "text": "huge"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Trong gia đình tôi, bố tôi luôn đảm nhận việc mang vác các vật nặng nhọc.",
+        "analysis": [
+          {"word": "strong", "badge": "mạnh mẽ", "badgeType": "wrong", "note": "= không phải từ trái nghĩa của heavy"},
+          {"word": "hard", "badge": "vất vả, nặng nhọc", "badgeType": "wrong", "note": "= gần nghĩa với heavy"},
+          {"word": "light", "badge": "nhẹ nhàng (TRÁI NGHĨA)", "badgeType": "correct", "note": "= nhẹ (trái nghĩa trực tiếp với heavy: nặng)"},
+          {"word": "huge", "badge": "khổng lồ", "badgeType": "wrong", "note": "= to lớn"}
+        ],
+        "whyCorrect": {"rule": "Cặp tính từ trái nghĩa cơ bản:", "content": "Từ gạch chân <b>heavy</b> có nghĩa là nặng, nặng nhọc. Từ trái nghĩa trực tiếp là <span class='highlight-green-tag'>light</span> (nhẹ nhàng)."},
+        "whyWrong": [
+          {"word": "strong / hard / huge", "reason": "cùng nhóm nghĩa mạnh, khó, to lớn chứ không trái nghĩa với 'heavy'."}
+        ]
+      },
+      {
+        "id": 16,
+        "type": "Đọc điền thông báo (Cloze Announcement)",
+        "question": "Question 16 (Give Yourself A Coffee Break!): Stop working (16)______ a while and take a cheerful cup of coffee.",
+        "options": [
+          {"key": "A", "text": "for"},
+          {"key": "B", "text": "with"},
+          {"key": "C", "text": "at"},
+          {"key": "D", "text": "of"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Hãy ngừng làm việc trong một lát và thưởng thức một tách cà phê sảng khoái.",
+        "analysis": [
+          {"word": "for", "badge": "for a while (một lát)", "badgeType": "correct", "note": "= cụm từ cố định: for a while (trong một khoảng thời gian ngắn)"},
+          {"word": "with", "badge": "với", "badgeType": "wrong", "note": "= không đi với a while"},
+          {"word": "at", "badge": "tại", "badgeType": "wrong", "note": "= sai giới từ"},
+          {"word": "of", "badge": "của", "badgeType": "wrong", "note": "= sai giới từ"}
+        ],
+        "whyCorrect": {"rule": "Cụm giới từ chỉ khoảng thời gian:", "content": "Cụm từ cố định: <span class='highlight-green-tag'>for a while</span> = trong một chốc lát, trong một khoảng thời gian ngắn."},
+        "whyWrong": [
+          {"word": "with / at / of", "reason": "không kết hợp với 'a while'."}
+        ],
+        "passage_key": "coffee_break",
+        "is_first_in_passage": "coffee_break"
+      },
+      {
+        "id": 17,
+        "type": "Mạo từ (Articles)",
+        "question": "Question 17: Get ready for your work with (17)______ fragrant cup of coffee.",
+        "options": [
+          {"key": "A", "text": "the"},
+          {"key": "B", "text": "an"},
+          {"key": "C", "text": "a"},
+          {"key": "D", "text": "no article"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Hãy sẵn sàng cho công việc của bạn với một tách cà phê thơm lừng.",
+        "analysis": [
+          {"word": "the", "badge": "mạo từ xác định", "badgeType": "wrong", "note": "= đang nhắc tới một tách cà phê bất kỳ nói chung"},
+          {"word": "an", "badge": "trước nguyên âm", "badgeType": "wrong", "note": "= 'fragrant' bắt đầu bằng phụ âm /f/ nên không dùng 'an'"},
+          {"word": "a", "badge": "a fragrant cup", "badgeType": "correct", "note": "= danh từ đếm được số ít 'cup' bắt đầu bằng phụ âm /f/ của 'fragrant'"},
+          {"word": "no article", "badge": "thiếu mạo từ", "badgeType": "wrong", "note": "= danh từ đếm được số ít 'cup' bắt buộc phải có mạo từ"}
+        ],
+        "whyCorrect": {"rule": "Mạo từ không xác định 'a/an' với danh từ chỉ đơn vị đo lường:", "content": "Danh từ chính là <b>cup</b> (danh từ đếm được số ít) được nhắc đến lần đầu mang nghĩa 'một tách cà phê'. Từ đứng liền sau là <b>fragrant</b> bắt đầu bằng phụ âm /f/ nên dùng mạo từ <span class='highlight-green-tag'>a</span>."},
+        "whyWrong": [
+          {"word": "an", "reason": "'fragrant' bắt đầu bằng âm phụ âm /f/."},
+          {"word": "the", "reason": "chưa xác định cụ thể tách cà phê nào."},
+          {"word": "no article", "reason": "danh từ đếm được số ít 'cup' không thể đứng trơ trọi."}
+        ],
+        "passage_key": "coffee_break"
+      },
+      {
+        "id": 18,
+        "type": "Từ loại (Word Form)",
+        "question": "Question 18: As long as you take it, your boredom and (18)______ will be gone.",
+        "options": [
+          {"key": "A", "text": "disappoint"},
+          {"key": "B", "text": "disappointedly"},
+          {"key": "C", "text": "disappointment"},
+          {"key": "D", "text": "disappointed"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Chỉ cần bạn uống nó, sự buồn chán và nỗi thất vọng/chán nản của bạn sẽ tan biến.",
+        "analysis": [
+          {"word": "disappoint", "badge": "động từ", "badgeType": "wrong", "note": "= (v) làm thất vọng"},
+          {"word": "disappointedly", "badge": "trạng từ", "badgeType": "wrong", "note": "= (adv) một cách thất vọng"},
+          {"word": "disappointment", "badge": "danh từ", "badgeType": "correct", "note": "= (n) sự thất vọng (song hành với danh từ 'boredom')"},
+          {"word": "disappointed", "badge": "tính từ", "badgeType": "wrong", "note": "= (adj) cảm thấy thất vọng"}
+        ],
+        "whyCorrect": {"rule": "Cấu trúc song hành với liên từ 'and':", "content": "Trước liên từ <b>and</b> là danh từ <b>your boredom</b> (sự buồn chán của bạn), do đó sau <b>and</b> bắt buộc phải là một <b>danh từ</b> để cùng làm chủ ngữ cho 'will be gone': <span class='highlight-green-tag'>disappointment</span> (sự thất vọng/chán nản)."},
+        "whyWrong": [
+          {"word": "disappoint", "reason": "là động từ."},
+          {"word": "disappointedly", "reason": "là trạng từ."},
+          {"word": "disappointed", "reason": "là tính từ."}
+        ],
+        "passage_key": "coffee_break"
+      },
+      {
+        "id": 19,
+        "type": "Cụm động từ (Phrasal Verbs)",
+        "question": "Question 19 (Children & Household Chores): Doing chores helps children learn about what they need to do to care (19)______ themselves, a home and a family.",
+        "options": [
+          {"key": "A", "text": "on"},
+          {"key": "B", "text": "in"},
+          {"key": "C", "text": "of"},
+          {"key": "D", "text": "for"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Làm việc nhà giúp trẻ học được những gì chúng cần làm để tự chăm sóc bản thân, tổ ấm và gia đình.",
+        "analysis": [
+          {"word": "on", "badge": "trên", "badgeType": "wrong", "note": "= không đi với care"},
+          {"word": "in", "badge": "trong", "badgeType": "wrong", "note": "= không đi với care"},
+          {"word": "of", "badge": "take care of", "badgeType": "wrong", "note": "= chỉ dùng 'of' khi có chữ 'take' phía trước (take care of)"},
+          {"word": "for", "badge": "care for (chăm sóc)", "badgeType": "correct", "note": "= care for sb/sth = take care of = look after (chăm sóc)"}
+        ],
+        "whyCorrect": {"rule": "Phân biệt 'care for' và 'take care of':", "content": "Động từ <b>care</b> khi đứng một mình mang nghĩa chăm sóc sẽ đi với giới từ <b>for</b>: <span class='highlight-green-tag'>care for somebody/something</span> (= take care of / look after)."},
+        "whyWrong": [
+          {"word": "of", "reason": "bẫy rất hay gặp! Phải là 'take care of', còn động từ 'care' đứng một mình thì đi với 'for'."},
+          {"word": "on / in", "reason": "sai giới từ."}
+        ],
+        "passage_key": "children_chores",
+        "is_first_in_passage": "children_chores"
+      },
+      {
+        "id": 20,
+        "type": "Đại từ quan hệ (Relative Pronouns)",
+        "question": "Question 20: They learn skills (20)______ they can use in their adult lives like preparing meals, cleaning, organising and gardening.",
+        "options": [
+          {"key": "A", "text": "when"},
+          {"key": "B", "text": "which"},
+          {"key": "C", "text": "who"},
+          {"key": "D", "text": "where"}
+        ],
+        "correct": "B",
+        "trans": "Dịch: Chúng học được những kỹ năng mà chúng có thể sử dụng trong cuộc sống trưởng thành sau này như chuẩn bị bữa ăn, dọn dẹp, sắp xếp và làm vườn.",
+        "analysis": [
+          {"word": "when", "badge": "trạng từ chỉ thời gian", "badgeType": "wrong", "note": "= 'skills' không phải là thời gian"},
+          {"word": "which", "badge": "thay thế cho vật 'skills'", "badgeType": "correct", "note": "= đại từ quan hệ thay cho danh từ chỉ vật 'skills' làm tân ngữ cho 'use'"},
+          {"word": "who", "badge": "thay thế cho người", "badgeType": "wrong", "note": "= 'skills' không phải là danh từ chỉ người"},
+          {"word": "where", "badge": "trạng từ chỉ nơi chốn", "badgeType": "wrong", "note": "= 'skills' không phải là địa điểm"}
+        ],
+        "whyCorrect": {"rule": "Đại từ quan hệ thay thế danh từ chỉ vật:", "content": "Danh từ đứng trước là <b>skills</b> (những kỹ năng - danh từ chỉ sự vật/khái niệm), do đó ta dùng đại từ quan hệ <span class='highlight-green-tag'>which</span> để thay thế."},
+        "whyWrong": [
+          {"word": "who", "reason": "chỉ dùng cho người."},
+          {"word": "when / where", "reason": "dùng cho thời gian và nơi chốn."}
+        ],
+        "passage_key": "children_chores"
+      },
+      {
+        "id": 21,
+        "type": "Cụm từ cố định (Collocations)",
+        "question": "Question 21: ...relationship skills like communicating clearly, negotiating, cooperating and working as (21)______ team.",
+        "options": [
+          {"key": "A", "text": "a"},
+          {"key": "B", "text": "any"},
+          {"key": "C", "text": "every"},
+          {"key": "D", "text": "some"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: ...các kỹ năng quan hệ giao tiếp như giao tiếp rõ ràng, đàm phán, hợp tác và làm việc nhóm (như một tập thể).",
+        "analysis": [
+          {"word": "a", "badge": "work as a team", "badgeType": "correct", "note": "= làm việc như một đội/làm việc nhóm"},
+          {"word": "any", "badge": "bất kỳ", "badgeType": "wrong", "note": "= không dùng work as any team"},
+          {"word": "every", "badge": "mỗi", "badgeType": "wrong", "note": "= sai ngữ nghĩa"},
+          {"word": "some", "badge": "một vài", "badgeType": "wrong", "note": "= 'team' ở đây là danh từ số ít"}
+        ],
+        "whyCorrect": {"rule": "Cụm từ cố định 'work as a team':", "content": "Cụm từ chuẩn trong tiếng Anh: <span class='highlight-green-tag'>work as a team</span> = phối hợp làm việc nhóm, làm việc như một tập thể thống nhất."},
+        "whyWrong": [
+          {"word": "any / every / some", "reason": "không tạo thành cụm cố định chỉ kỹ năng làm việc nhóm."}
+        ],
+        "passage_key": "children_chores"
+      },
+      {
+        "id": 22,
+        "type": "Từ loại (Word Form - Tính từ chỉ cảm xúc)",
+        "question": "Question 22: Even if they don’t enjoy the chore, when they keep going, they can feel (22)______ that they’ve finished the task.",
+        "options": [
+          {"key": "A", "text": "satisfactory"},
+          {"key": "B", "text": "satisfied"},
+          {"key": "C", "text": "satisfaction"},
+          {"key": "D", "text": "satisfy"}
+        ],
+        "correct": "B",
+        "trans": "Dịch: Ngay cả khi chúng không thích công việc nhà đó, khi chúng kiên trì tiếp tục, chúng có thể cảm thấy hài lòng vì đã hoàn thành xong nhiệm vụ.",
+        "analysis": [
+          {"word": "satisfactory", "badge": "tính từ chỉ tính chất vật", "badgeType": "wrong", "note": "= (adj) đạt yêu cầu, thỏa đáng (dùng cho kết quả, chất lượng)"},
+          {"word": "satisfied", "badge": "tính từ cảm xúc người (-ed)", "badgeType": "correct", "note": "= feel satisfied: cảm thấy hài lòng, thỏa mãn (chủ ngữ là người 'they')"},
+          {"word": "satisfaction", "badge": "danh từ", "badgeType": "wrong", "note": "= sau linking verb 'feel' cần tính từ"},
+          {"word": "satisfy", "badge": "động từ", "badgeType": "wrong", "note": "= (v) làm hài lòng"}
+        ],
+        "whyCorrect": {"rule": "Tính từ đuôi -ed diễn tả cảm xúc của con người:", "content": "Sau động từ nối <b>feel</b> và chủ ngữ chỉ người <b>they</b> (children), ta dùng tính từ đuôi -ed chỉ cảm xúc: <span class='highlight-green-tag'>satisfied</span> (cảm thấy hài lòng)."},
+        "whyWrong": [
+          {"word": "satisfactory", "reason": "dùng để đánh giá sự vật/kết quả (ví dụ: a satisfactory result), không dùng cho cảm xúc người."},
+          {"word": "satisfaction", "reason": "là danh từ."},
+          {"word": "satisfy", "reason": "là động từ."}
+        ],
+        "passage_key": "children_chores"
+      },
+      {
+        "id": 23,
+        "type": "Liên từ (Conjunctions)",
+        "question": "Question 23: When children help out, chores get done sooner (23)______ parents have less to do.",
+        "options": [
+          {"key": "A", "text": "because"},
+          {"key": "B", "text": "otherwise"},
+          {"key": "C", "text": "and"},
+          {"key": "D", "text": "but"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Khi con cái phụ giúp, công việc nhà được hoàn thành sớm hơn và cha mẹ cũng có ít việc phải làm hơn.",
+        "analysis": [
+          {"word": "because", "badge": "bởi vì", "badgeType": "wrong", "note": "= hai vế là hai lợi ích song song, không phải nguyên nhân"},
+          {"word": "otherwise", "badge": "nếu không thì", "badgeType": "wrong", "note": "= chỉ kết quả ngược lại"},
+          {"word": "and", "badge": "và (bổ sung đồng đẳng)", "badgeType": "correct", "note": "= nối hai kết quả tích cực song hành"},
+          {"word": "but", "badge": "nhưng", "badgeType": "wrong", "note": "= hai vế hoàn toàn thuận chiều, không đối lập"}
+        ],
+        "whyCorrect": {"rule": "Liên từ kết hợp 'and':", "content": "Khi trẻ phụ giúp việc nhà, hai kết quả tốt đẹp cùng xảy ra: 'chores get done sooner' (việc nhà xong sớm hơn) <b>VÀ</b> 'parents have less to do' (cha mẹ đỡ vất vả hơn). Ta dùng liên từ <span class='highlight-green-tag'>and</span>."},
+        "whyWrong": [
+          {"word": "because", "reason": "không phải quan hệ nhân quả ngược."},
+          {"word": "otherwise / but", "reason": "không mang nghĩa đối lập."}
+        ],
+        "passage_key": "children_chores"
+      },
+      {
+        "id": 24,
+        "type": "Đọc hiểu - Chi tiết bài đọc (Reading Comprehension)",
+        "question": "Question 24 (Family Types): The nuclear family ranks as the most common family type ______.",
+        "options": [
+          {"key": "A", "text": "in many industrialized countries"},
+          {"key": "B", "text": "in countries with nuclear weapons"},
+          {"key": "C", "text": "that consists of more than two generations"},
+          {"key": "D", "text": "that leads to the divorce of parents"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Gia đình hạt nhân xếp hạng là kiểu gia đình phổ biến nhất ở ______.",
+        "analysis": [
+          {"word": "in many industrialized countries", "badge": "ở các nước công nghiệp hóa", "badgeType": "correct", "note": "= khớp với câu 2 đoạn 1: 'In Western, industrialized societies, the nuclear family ranks as the most common family type'"},
+          {"word": "nuclear weapons", "badge": "vũ khí hạt nhân", "badgeType": "wrong", "note": "= bẫy đánh lừa chữ 'nuclear' (gia đình hạt nhân không liên quan vũ khí hạt nhân!)"},
+          {"word": "more than two generations", "badge": "hơn 2 thế hệ", "badgeType": "wrong", "note": "= đây là đặc điểm của extended family (gia đình đa thế hệ)"},
+          {"word": "leads to the divorce", "badge": "dẫn đến ly hôn", "badgeType": "wrong", "note": "= thông tin sai lệch hoàn toàn"}
+        ],
+        "whyCorrect": {"rule": "Dẫn chứng trực tiếp đoạn 1:", "content": "Câu thứ 2 đoạn 1 nêu rõ: 'In Western, <b>industrialized societies</b>, the nuclear family ranks as the most common family type.' Do đó đáp án chính xác là <span class='highlight-green-tag'>in many industrialized countries</span>."},
+        "whyWrong": [
+          {"word": "Option B", "reason": "bẫy từ vựng hài hước 'nuclear weapons' (vũ khí hạt nhân)."},
+          {"word": "Option C", "reason": "nuclear family chỉ có 2 thế hệ (bố mẹ và con cái)."},
+          {"word": "Option D", "reason": "sai thông tin."}
+        ],
+        "passage_key": "family_types",
+        "is_first_in_passage": "family_types"
+      },
+      {
+        "id": 25,
+        "type": "Đọc hiểu - Chi tiết bài đọc (Reading Comprehension)",
+        "question": "Question 25: In the single-parent family, ______.",
+        "options": [
+          {"key": "A", "text": "there are often no children"},
+          {"key": "B", "text": "only one parent lives with his or her child or children"},
+          {"key": "C", "text": "the number of blended children has increased"},
+          {"key": "D", "text": "children live with their grandparents"}
+        ],
+        "correct": "B",
+        "trans": "Dịch: Trong gia đình đơn thân, ______.",
+        "analysis": [
+          {"word": "no children", "badge": "không có con cái", "badgeType": "wrong", "note": "= không có con thì không gọi là parent"},
+          {"word": "only one parent lives with...", "badge": "chỉ bố hoặc mẹ sống với con", "badgeType": "correct", "note": "= khớp với 'a mother or a father heads the family alone'"},
+          {"word": "blended children", "badge": "sai khái niệm", "badgeType": "wrong", "note": "= nhầm sang blended family"},
+          {"word": "live with grandparents", "badge": "sống với ông bà", "badgeType": "wrong", "note": "= không phải định nghĩa của single-parent family"}
+        ],
+        "whyCorrect": {"rule": "Dẫn chứng định nghĩa 'single-parent family':", "content": "Đoạn 1 viết: 'In the single-parent family, for example, <b>a mother or a father heads the family alone</b>' (chỉ một mình người mẹ hoặc người cha làm chủ gia đình nuôi con). Đồng nghĩa với: <span class='highlight-green-tag'>only one parent lives with his or her child or children</span>."},
+        "whyWrong": [
+          {"word": "Option A, C, D", "reason": "sai lệch so với định nghĩa gia đình đơn thân trong bài."}
+        ],
+        "passage_key": "family_types"
+      },
+      {
+        "id": 26,
+        "type": "Đọc hiểu - Chi tiết bài đọc (Reading Comprehension)",
+        "question": "Question 26: Grandparents, parents and children are mentioned as ______.",
+        "options": [
+          {"key": "A", "text": "the three typical generations of an extended family"},
+          {"key": "B", "text": "three branches of a family tree"},
+          {"key": "C", "text": "the closest and happiest relatives in family units"},
+          {"key": "D", "text": "a complex combination"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Ông bà, cha mẹ và con cái được đề cập trong bài như là ______.",
+        "analysis": [
+          {"word": "three typical generations...", "badge": "3 thế hệ điển hình của đại gia đình", "badgeType": "correct", "note": "= khớp với đoạn 2: 'several generations of family members, including grandparents, parents and children'"},
+          {"word": "three branches...", "badge": "3 nhánh cây gia phả", "badgeType": "wrong", "note": "= bài không nhắc tới family tree"},
+          {"word": "closest and happiest...", "badge": "họ hàng hạnh phúc nhất", "badgeType": "wrong", "note": "= bài không so sánh mức độ hạnh phúc"},
+          {"word": "a complex combination", "badge": "sự kết hợp phức tạp", "badgeType": "wrong", "note": "= không nêu rõ bản chất thế hệ"}
+        ],
+        "whyCorrect": {"rule": "Dẫn chứng từ đoạn 2:", "content": "Đoạn 2 nêu rõ: 'These complex families usually contain <b>several generations of family members, including grandparents, parents and children</b>.' Đây chính là <span class='highlight-green-tag'>the three typical generations of an extended family</span>."},
+        "whyWrong": [
+          {"word": "Option B, C, D", "reason": "không phản ánh đúng thông tin dẫn chứng về các thế hệ (generations) của gia đình mở rộng."}
+        ],
+        "passage_key": "family_types"
+      },
+      {
+        "id": 27,
+        "type": "Đọc hiểu - Ý chính đoạn văn (Paragraph Main Idea)",
+        "question": "Question 27: The second paragraph is about ______.",
+        "options": [
+          {"key": "A", "text": "American culture"},
+          {"key": "B", "text": "relatives and family members"},
+          {"key": "C", "text": "the relationship between family members"},
+          {"key": "D", "text": "the extended family"}
+        ],
+        "correct": "D",
+        "trans": "Dịch: Đoạn văn thứ hai viết về chủ đề gì?",
+        "analysis": [
+          {"word": "American culture", "badge": "văn hóa Mỹ", "badgeType": "wrong", "note": "= không được đề cập"},
+          {"word": "relatives and family members", "badge": "quá chung chung", "badgeType": "wrong", "note": "= chỉ là các từ vựng xuất hiện trong đoạn"},
+          {"word": "the relationship...", "badge": "mối quan hệ", "badgeType": "wrong", "note": "= đoạn 2 tập trung định nghĩa mô hình gia đình đa thế hệ"},
+          {"word": "the extended family", "badge": "gia đình đa thế hệ (mở rộng)", "badgeType": "correct", "note": "= toàn bộ đoạn 2 miêu tả cấu trúc và thành viên của extended family"}
+        ],
+        "whyCorrect": {"rule": "Xác định chủ đề đoạn 2:", "content": "Trong khi đoạn 1 nói về <i>nuclear, single-parent, blended family</i> thì toàn bộ đoạn 2 giải thích về mô hình gia đình nhiều thế hệ chung sống (ông bà, cha mẹ, con cái, cô dì chú bác) và chốt lại bằng thuật ngữ: <span class='highlight-green-tag'>the extended family</span>."},
+        "whyWrong": [
+          {"word": "Option A, B, C", "reason": "không chỉ đúng thuật ngữ loại hình gia đình mà đoạn 2 đang phân tích."}
+        ],
+        "passage_key": "family_types"
+      },
+      {
+        "id": 28,
+        "type": "Đọc hiểu - Từ vựng ngữ cảnh (Vocabulary in Context)",
+        "question": "Question 28: The word “<u>blended</u>” in paragraph 1 is closest in meaning to ______.",
+        "options": [
+          {"key": "A", "text": "complex"},
+          {"key": "B", "text": "married"},
+          {"key": "C", "text": "mixed"},
+          {"key": "D", "text": "formed"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Từ “blended” (hòa trộn/ghép) ở đoạn 1 gần nghĩa nhất với từ nào?",
+        "analysis": [
+          {"word": "complex", "badge": "phức tạp", "badgeType": "wrong", "note": "= dùng cho extended family ở đoạn 2"},
+          {"word": "married", "badge": "đã kết hôn", "badgeType": "wrong", "note": "= không đồng nghĩa với blended"},
+          {"word": "mixed", "badge": "kết hợp, pha trộn, ghép lại", "badgeType": "correct", "note": "= blended = mixed (gia đình ghép giữa hai người tái hôn)"},
+          {"word": "formed", "badge": "được hình thành", "badgeType": "wrong", "note": "= động từ phía sau trong câu"}
+        ],
+        "whyCorrect": {"rule": "Từ đồng nghĩa:", "content": "Động từ <b>blend</b> nghĩa là pha trộn, kết hợp lại. Do đó tính từ <b>blended</b> (trong <i>blended family</i> - gia đình tái hôn/gia đình ghép) đồng nghĩa trực tiếp với <span class='highlight-green-tag'>mixed</span>."},
+        "whyWrong": [
+          {"word": "complex / married / formed", "reason": "không mang nghĩa 'kết hợp/hòa trộn' như 'blended'."}
+        ],
+        "passage_key": "family_types"
+      },
+      {
+        "id": 29,
+        "type": "Tự luận Phần 1 - Từ loại (Word Form)",
+        "question": "Question 29 (II. PHẦN TỰ LUẬN - Word Form): Complete the sentence with the correct form of the word in capitals:<br>It is parents' duty and ______ to join hands to take care of their children and give them a happy home. <b>(RESPONSIBLE)</b>",
+        "options": [
+          {"key": "A", "text": "responsibility"},
+          {"key": "B", "text": "responsibly"},
+          {"key": "C", "text": "irresponsible"},
+          {"key": "D", "text": "responsibilities"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Bổn phận và trách nhiệm của cha mẹ là chung tay chăm sóc con cái và mang lại cho chúng một mái ấm hạnh phúc.",
+        "analysis": [
+          {"word": "responsibility", "badge": "danh từ (số ít)", "badgeType": "correct", "note": "= (n) trách nhiệm (song hành với danh từ 'duty' phía trước)"},
+          {"word": "responsibly", "badge": "trạng từ", "badgeType": "wrong", "note": "= (adv) một cách có trách nhiệm"},
+          {"word": "irresponsible", "badge": "tính từ trái nghĩa", "badgeType": "wrong", "note": "= (adj) vô trách nhiệm"},
+          {"word": "responsibilities", "badge": "danh từ số nhiều", "badgeType": "wrong", "note": "= phía trước là 'duty' (số ít) nên dùng 'responsibility' đồng dạng"}
+        ],
+        "whyCorrect": {"rule": "Cấu trúc song hành danh từ (Duty and Responsibility):", "content": "Sau sở hữu cách <b>parents'</b> và nối với danh từ số ít <b>duty</b> bởi liên từ <b>and</b>, ta cần một danh từ tương ứng: <span class='highlight-green-tag'>responsibility</span> (duty and responsibility: bổn phận và trách nhiệm)."},
+        "whyWrong": [
+          {"word": "responsibly", "reason": "là trạng từ."},
+          {"word": "irresponsible", "reason": "là tính từ."},
+          {"word": "responsibilities", "reason": "không đồng dạng số ít với 'duty'."}
+        ]
+      },
+      {
+        "id": 30,
+        "type": "Tự luận Phần 1 - Từ loại (Word Form)",
+        "question": "Question 30 (Word Form): Complete the sentence with the correct form of the word in capitals:<br>The measures should help create jobs and ______ the economy. <b>(STRONG)</b>",
+        "options": [
+          {"key": "A", "text": "strength"},
+          {"key": "B", "text": "strongly"},
+          {"key": "C", "text": "strengthen"},
+          {"key": "D", "text": "strengthened"}
+        ],
+        "correct": "C",
+        "trans": "Dịch: Các biện pháp này sẽ giúp tạo thêm việc làm và củng cố/tăng cường nền kinh tế.",
+        "analysis": [
+          {"word": "strength", "badge": "danh từ", "badgeType": "wrong", "note": "= (n) sức mạnh"},
+          {"word": "strongly", "badge": "trạng từ", "badgeType": "wrong", "note": "= (adv) một cách mạnh mẽ"},
+          {"word": "strengthen", "badge": "động từ nguyên thể", "badgeType": "correct", "note": "= (v) củng cố, làm vững mạnh (song hành với động từ 'create' sau 'help')"},
+          {"word": "strengthened", "badge": "động từ V-ed", "badgeType": "wrong", "note": "= không song hành với động từ nguyên mẫu 'create'"}
+        ],
+        "whyCorrect": {"rule": "Hậu tố tạo động từ '-en' & Cấu trúc song hành:", "content": "Sau 'help create jobs and...', ta cần một <b>động từ nguyên mẫu</b> song hành với <b>create</b> và nhận 'the economy' làm tân ngữ. Từ tính từ <b>strong</b> → Danh từ <b>strength</b> → Động từ: <span class='highlight-green-tag'>strengthen</span> (củng cố, tăng cường)."},
+        "whyWrong": [
+          {"word": "strength", "reason": "là danh từ, không làm động từ cho tân ngữ 'the economy'."},
+          {"word": "strongly", "reason": "là trạng từ."},
+          {"word": "strengthened", "reason": "sai dạng nguyên mẫu."}
+        ]
+      },
+      {
+        "id": 31,
+        "type": "Tự luận Phần 1 - Từ loại (Word Form)",
+        "question": "Question 31 (Word Form): Complete the sentence with the correct form of the word in capitals:<br>She cleans up ______ after she has finished cooking. <b>(SPOTLESS)</b>",
+        "options": [
+          {"key": "A", "text": "spotlessly"},
+          {"key": "B", "text": "spotless"},
+          {"key": "C", "text": "spot"},
+          {"key": "D", "text": "spotted"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Cô ấy dọn dẹp sạch bong không một vết bẩn sau khi nấu ăn xong.",
+        "analysis": [
+          {"word": "spotlessly", "badge": "trạng từ bổ nghĩa cho động từ", "badgeType": "correct", "note": "= (adv) một cách sạch sẽ tinh tươm (bổ nghĩa cho cụm động từ 'cleans up')"},
+          {"word": "spotless", "badge": "tính từ", "badgeType": "wrong", "note": "= (adj) không một vết bẩn"},
+          {"word": "spot", "badge": "danh từ/động từ", "badgeType": "wrong", "note": "= vết, đốm"},
+          {"word": "spotted", "badge": "tính từ có đốm", "badgeType": "wrong", "note": "= có chấm, đốm"}
+        ],
+        "whyCorrect": {"rule": "Trạng từ bổ nghĩa cho động từ thường:", "content": "Đứng sau cụm động từ thường <b>cleans up</b> (dọn dẹp), ta cần một <b>trạng từ chỉ cách thức</b> để bổ nghĩa: <b>spotless</b> (adj) + <b>-ly</b> → <span class='highlight-green-tag'>spotlessly</span> (một cách sạch bong, tinh tươm)."},
+        "whyWrong": [
+          {"word": "spotless", "reason": "là tính từ, không bổ nghĩa cho động từ thường 'cleans up'."},
+          {"word": "spot / spotted", "reason": "sai cả từ loại lẫn ngữ nghĩa."}
+        ]
+      },
+      {
+        "id": 32,
+        "type": "Tự luận Phần 1 - Từ loại (Word Form)",
+        "question": "Question 32 (Word Form): Complete the sentence with the correct form of the word in capitals:<br>I'm lucky to have such a(n) ______ brother who always gives me help when I need it. <b>(SUPPORT)</b>",
+        "options": [
+          {"key": "A", "text": "supportive"},
+          {"key": "B", "text": "supporter"},
+          {"key": "C", "text": "supportively"},
+          {"key": "D", "text": "supporting"}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Tôi thật may mắn khi có một người anh/em trai luôn biết quan tâm giúp đỡ, người luôn hỗ trợ tôi mỗi khi tôi cần.",
+        "analysis": [
+          {"word": "supportive", "badge": "tính từ chỉ phẩm chất", "badgeType": "correct", "note": "= (adj) luôn quan tâm, ủng hộ, giúp đỡ (a supportive brother)"},
+          {"word": "supporter", "badge": "danh từ", "badgeType": "wrong", "note": "= (n) cổ động viên, người ủng hộ"},
+          {"word": "supportively", "badge": "trạng từ", "badgeType": "wrong", "note": "= không đứng giữa mạo từ 'a' và danh từ 'brother'"},
+          {"word": "supporting", "badge": "phân từ (vai phụ)", "badgeType": "wrong", "note": "= chỉ dùng cho vai diễn phụ (supporting actor)"}
+        ],
+        "whyCorrect": {"rule": "Tính từ đứng trước danh từ chỉ người:", "content": "Đứng giữa mạo từ <b>a(n)</b> và danh từ chỉ người <b>brother</b>, ta cần một tính từ chỉ tính cách/phẩm chất biết giúp đỡ người khác: <span class='highlight-green-tag'>supportive</span>."},
+        "whyWrong": [
+          {"word": "supporter", "reason": "là danh từ."},
+          {"word": "supportively", "reason": "là trạng từ."},
+          {"word": "supporting", "reason": "chỉ dùng trong điện ảnh (supporting role: vai phụ)."}
+        ]
+      },
+      {
+        "id": 33,
+        "type": "Tự luận Phần 2 - Sắp xếp từ thành câu (Sentence Reordering)",
+        "question": "Question 33 (Reorder the given words):<br>husband / My / responsible / household / is / finance / for / .",
+        "options": [
+          {"key": "A", "text": "My husband is responsible for household finance."},
+          {"key": "B", "text": "My husband is for responsible household finance."},
+          {"key": "C", "text": "My household finance is responsible for husband."},
+          {"key": "D", "text": "My husband responsible is for finance household."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Chồng của tôi chịu trách nhiệm về tài chính trong gia đình.",
+        "analysis": [
+          {"word": "Option A", "badge": "chuẩn cấu trúc 100%", "badgeType": "correct", "note": "= My husband (S) + is responsible for + household finance (tài chính gia đình)"},
+          {"word": "Option B", "badge": "đảo giới từ sai", "badgeType": "wrong", "note": "= 'is for responsible' sai trật tự"},
+          {"word": "Option C", "badge": "ngược chủ ngữ", "badgeType": "wrong", "note": "= tài chính không thể chịu trách nhiệm cho người chồng"},
+          {"word": "Option D", "badge": "sai vị trí to be & danh từ ghép", "badgeType": "wrong", "note": "= phải là 'is responsible' và 'household finance'"}
+        ],
+        "whyCorrect": {"rule": "Cấu trúc 'be responsible for sth':", "content": "Chủ ngữ: <b>My husband</b> → Vị ngữ: <b>is responsible for</b> (chịu trách nhiệm về) → Cụm danh từ: <b>household finance</b> (tài chính gia đình). Câu hoàn chỉnh: <span class='highlight-green-tag'>My husband is responsible for household finance.</span>"},
+        "whyWrong": [
+          {"word": "Option B, C, D", "reason": "sắp xếp sai trật tự cụm tính từ 'is responsible for' và cụm danh từ 'household finance'."}
+        ]
+      },
+      {
+        "id": 34,
+        "type": "Tự luận Phần 2 - Sắp xếp từ thành câu (Sentence Reordering)",
+        "question": "Question 34 (Reorder the given words):<br>and / a / works / person / at / who / home / takes / Homemaker / care / and / the / is / house / of / family.",
+        "options": [
+          {"key": "A", "text": "Homemaker is a person who works at home and takes care of the family and house."},
+          {"key": "B", "text": "Homemaker is a person who takes care at home and works of the house and family."},
+          {"key": "C", "text": "Homemaker who is a person works at home and takes care of the house and family."},
+          {"key": "D", "text": "A person is Homemaker who works at home and takes care of the family and house."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Người nội trợ là người làm việc tại nhà và chăm sóc gia đình cùng nhà cửa.",
+        "analysis": [
+          {"word": "Option A", "badge": "mệnh đề quan hệ chuẩn", "badgeType": "correct", "note": "= Homemaker is a person who works at home and takes care of the family and house (hoặc house and family)"},
+          {"word": "Option B", "badge": "ghép sai giới từ", "badgeType": "wrong", "note": "= 'works of' là sai ngữ pháp"},
+          {"word": "Option C", "badge": "sai vị trí đại từ 'who'", "badgeType": "wrong", "note": "= 'who' phải đứng ngay sau 'a person'"},
+          {"word": "Option D", "badge": "đảo ngược định nghĩa", "badgeType": "wrong", "note": "= từ cần định nghĩa 'Homemaker' phải làm chủ ngữ đứng đầu câu"}
+        ],
+        "whyCorrect": {"rule": "Cấu trúc định nghĩa danh từ chỉ người:", "content": "Cấu trúc chuẩn: <b>[Thuật ngữ] + is a person who + V1 (works at home) + and + V2 (takes care of the family and house / house and family)</b>.<br>Câu hoàn chỉnh: <span class='highlight-green-tag'>Homemaker is a person who works at home and takes care of the family and house.</span>"},
+        "whyWrong": [
+          {"word": "Option B, C, D", "reason": "sai vị trí mệnh đề quan hệ 'who' và sai cụm cố định 'takes care of'."}
+        ]
+      },
+      {
+        "id": 35,
+        "type": "Tự luận Phần 2 - Sắp xếp từ thành câu (Sentence Reordering)",
+        "question": "Question 35 (Reorder the given words):<br>My / every / goes / My / the / for / supermarket / mom / to / Sunday / shopping.",
+        "options": [
+          {"key": "A", "text": "My mom goes to the supermarket for shopping every Sunday."},
+          {"key": "B", "text": "My mom goes for shopping to the supermarket every Sunday."},
+          {"key": "C", "text": "Every Sunday my mom goes shopping for to the supermarket."},
+          {"key": "D", "text": "My supermarket goes to my mom for shopping every Sunday."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Mẹ tôi đi đến siêu thị để mua sắm vào mỗi Chủ nhật.",
+        "analysis": [
+          {"word": "Option A", "badge": "chuẩn trật tự từ", "badgeType": "correct", "note": "= My mom (S) + goes to the supermarket (nơi chốn) + for shopping (mục đích) + every Sunday (thời gian)"},
+          {"word": "Option B", "badge": "sai cụm goes to", "badgeType": "wrong", "note": "= phải là 'goes to the supermarket'"},
+          {"word": "Option C", "badge": "thừa giới từ 'for to'", "badgeType": "wrong", "note": "= hai giới từ 'for to' đứng cạnh nhau là sai"},
+          {"word": "Option D", "badge": "sai chủ ngữ", "badgeType": "wrong", "note": "= siêu thị không thể tự đi đến mẹ"}
+        ],
+        "whyCorrect": {"rule": "Trật tự Nơi chốn - Mục đích - Thời gian:", "content": "(Lưu ý: Trong đề gốc in dư một chữ 'My'). Sắp xếp chuẩn: Chủ ngữ <b>My mom</b> + <b>goes to the supermarket</b> (đi tới siêu thị) + <b>for shopping</b> (để mua sắm) + <b>every Sunday</b> (mỗi Chủ nhật): <span class='highlight-green-tag'>My mom goes to the supermarket for shopping every Sunday.</span>"},
+        "whyWrong": [
+          {"word": "Option B, C, D", "reason": "sai kết hợp giới từ chỉ hướng chuyển động 'goes to the supermarket'."}
+        ]
+      },
+      {
+        "id": 36,
+        "type": "Tự luận Phần 2 - Sắp xếp từ thành câu (Sentence Reordering)",
+        "question": "Question 36 (Reorder the given words):<br>for / sometimes / has / Bich / noodle / soup / chicken / breakfast.",
+        "options": [
+          {"key": "A", "text": "Bich sometimes has chicken noodle soup for breakfast."},
+          {"key": "B", "text": "Bich has sometimes noodle chicken soup for breakfast."},
+          {"key": "C", "text": "Bich sometimes has soup chicken noodle for breakfast."},
+          {"key": "D", "text": "For breakfast Bich has chicken soup noodle sometimes."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Bích thỉnh thoảng ăn phở gà (súp mì gà) vào bữa sáng.",
+        "analysis": [
+          {"word": "Option A", "badge": "chuẩn vị trí trạng từ & danh từ ghép", "badgeType": "correct", "note": "= Bich + sometimes (trước V thường) + has + chicken noodle soup (phở/mì gà) + for breakfast"},
+          {"word": "Option B", "badge": "sai vị trí sometimes & tên món ăn", "badgeType": "wrong", "note": "= sometimes phải đứng trước động từ thường 'has'"},
+          {"word": "Option C", "badge": "sai trật tự danh từ ghép", "badgeType": "wrong", "note": "= danh từ chính là 'soup' phải đứng cuối cụm 'chicken noodle soup'"},
+          {"word": "Option D", "badge": "sai cụm chicken noodle soup", "badgeType": "wrong", "note": "= phải là chicken noodle soup"}
+        ],
+        "whyCorrect": {"rule": "Vị trí trạng từ tần suất & Cụm danh từ món ăn:", "content": "1. Trạng từ tần suất <b>sometimes</b> đứng trước động từ thường <b>has</b>.<br>2. Tên món ăn: <b>chicken noodle soup</b> (phở gà / miến gà / súp mì gà).<br>3. Bữa sáng: <b>for breakfast</b>.<br>Câu hoàn chỉnh: <span class='highlight-green-tag'>Bich sometimes has chicken noodle soup for breakfast.</span>"},
+        "whyWrong": [
+          {"word": "Option B, C, D", "reason": "sai trật tự cụm danh từ 'chicken noodle soup' và vị trí trạng từ 'sometimes'."}
+        ]
+      },
+      {
+        "id": 37,
+        "type": "Tự luận Phần 3 - Dựng câu hoàn chỉnh từ từ gợi ý",
+        "question": "Question 37 (Use the given words to make a meaningful sentence):<br>my mother / cook / dinner / and / my father / wash / the dishes / after meal",
+        "options": [
+          {"key": "A", "text": "My mother cooks dinner and my father washes the dishes after meals."},
+          {"key": "B", "text": "My mother cook dinner and my father wash the dishes after meal."},
+          {"key": "C", "text": "My mother is cooking dinner and my father washed the dishes after meal."},
+          {"key": "D", "text": "My mother cooking dinner and my father washing the dishes after meals."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Mẹ tôi nấu bữa tối và bố tôi rửa bát sau bữa ăn.",
+        "analysis": [
+          {"key": "A", "word": "cooks ... washes", "badge": "chia Hiện tại đơn ngôi thứ 3 số ít", "badgeType": "correct", "note": "= My mother (số ít) → cooks; my father (số ít) → washes (thêm -es)"},
+          {"key": "B", "word": "cook ... wash", "badge": "chưa chia động từ", "badgeType": "wrong", "note": "= chủ ngữ số ít ở Hiện tại đơn bắt buộc phải thêm -s/-es"},
+          {"key": "C", "word": "is cooking ... washed", "badge": "lệch thì", "badgeType": "wrong", "note": "= một vế hiện tại tiếp diễn, một vế quá khứ đơn"},
+          {"key": "D", "word": "cooking ... washing", "badge": "thiếu to be", "badgeType": "wrong", "note": "= V-ing không thể làm động từ chính nếu không có to be"}
+        ],
+        "whyCorrect": {"rule": "Chia động từ thì Hiện tại đơn với chủ ngữ số ít:", "content": "Câu diễn tả thói quen phân công việc nhà hàng ngày nên dùng thì <b>Hiện tại đơn</b>:<br>• <b>My mother</b> (ngôi 3 số ít) → động từ thêm -s: <b>cooks dinner</b>.<br>• <b>my father</b> (ngôi 3 số ít, tận cùng là -sh) → động từ thêm -es: <b>washes the dishes</b>.<br>• <b>after meals / after the meal</b>.<br>Câu hoàn chỉnh: <span class='highlight-green-tag'>My mother cooks dinner and my father washes the dishes after meals (hoặc after the meal).</span>"},
+        "whyWrong": [
+          {"word": "Option B", "reason": "chưa chia động từ 'cook' và 'wash'."},
+          {"word": "Option C, D", "reason": "sai ngữ pháp thì của động từ."}
+        ]
+      },
+      {
+        "id": 38,
+        "type": "Tự luận Phần 3 - Dựng câu hoàn chỉnh từ từ gợi ý",
+        "question": "Question 38 (Use the given words to make a meaningful sentence):<br>we / help / parents / do / housework / because / we / want / them / have / more / free time",
+        "options": [
+          {"key": "A", "text": "We help our parents do the housework because we want them to have more free time."},
+          {"key": "B", "text": "We help parents doing housework because we want them having more free time."},
+          {"key": "C", "text": "We helps our parents do housework because we wants them to have more free time."},
+          {"key": "D", "text": "We help our parents do the housework because we want that they have more free time."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Chúng tôi giúp bố mẹ làm việc nhà bởi vì chúng tôi muốn bố mẹ có thêm nhiều thời gian rảnh rỗi hơn.",
+        "analysis": [
+          {"word": "Option A", "badge": "chuẩn cấu trúc help & want", "badgeType": "correct", "note": "= help sb do sth + want sb TO DO sth (want them to have)"},
+          {"word": "Option B", "badge": "sai V-ing sau help & want", "badgeType": "wrong", "note": "= không dùng 'want them having'"},
+          {"word": "Option C", "badge": "sai chia ngôi We", "badgeType": "wrong", "note": "= chủ ngữ số nhiều 'We' không thêm -s vào động từ"},
+          {"word": "Option D", "badge": "sai cấu trúc want that", "badgeType": "wrong", "note": "= tiếng Anh không có cấu trúc 'want that + mệnh đề'"}
+        ],
+        "whyCorrect": {"rule": "Cấu trúc 'help + O + V/to-V' và 'want + O + to-V':", "content": "1. Cấu trúc giúp đỡ: <b>help + (our) parents + (to) do (the) housework</b>.<br>2. Cấu trúc mong muốn ai làm gì: <b>want + somebody + TO V</b> → <b>want them to have more free time</b>.<br>Câu hoàn chỉnh: <span class='highlight-green-tag'>We help our parents do the housework because we want them to have more free time.</span>"},
+        "whyWrong": [
+          {"word": "Option B", "reason": "sau 'want + O' bắt buộc phải là 'to-V' (to have), không dùng V-ing."},
+          {"word": "Option C", "reason": "chủ ngữ 'We' không chia động từ thêm -s."},
+          {"word": "Option D", "reason": "không dùng 'want that'."}
+        ]
+      },
+      {
+        "id": 39,
+        "type": "Tự luận Phần 3 - Dựng câu hoàn chỉnh từ từ gợi ý",
+        "question": "Question 39 (Use the given words to make a meaningful sentence):<br>when / I / finish / homework / I / often / clean / my room / and / water / the plants",
+        "options": [
+          {"key": "A", "text": "When I finish my homework, I often clean my room and water the plants."},
+          {"key": "B", "text": "When I finishes homework, I often cleans my room and waters the plants."},
+          {"key": "C", "text": "When I will finish my homework, I often clean my room and water the plants."},
+          {"key": "D", "text": "When I finishing my homework, I often clean my room and watering the plants."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Khi tôi hoàn thành xong bài tập về nhà, tôi thường dọn dẹp phòng của mình và tưới cây.",
+        "analysis": [
+          {"word": "Option A", "badge": "Hiện tại đơn ngôi 'I' chuẩn", "badgeType": "correct", "note": "= When I finish (my) homework, I often clean my room and water the plants."},
+          {"word": "Option B", "badge": "chia dư -s/-es cho ngôi I", "badgeType": "wrong", "note": "= chủ ngữ 'I' không thêm -s/-es ở thì Hiện tại đơn"},
+          {"word": "Option C", "badge": "dùng will trong mệnh đề When", "badgeType": "wrong", "note": "= câu diễn tả thói quen (often) ở hiện tại, không dùng will"},
+          {"word": "Option D", "badge": "sai V-ing", "badgeType": "wrong", "note": "= thiếu động từ chia thì"}
+        ],
+        "whyCorrect": {"rule": "Thì Hiện tại đơn diễn tả thói quen với chủ ngữ 'I':", "content": "Cả hai mệnh đề đều diễn tả thói quen thường xuyên ở hiện tại (có trạng từ tần suất <b>often</b>). Với chủ ngữ <b>I</b>, các động từ đều giữ nguyên mẫu: <b>finish</b>, <b>clean</b>, <b>water</b>.<br>Câu hoàn chỉnh: <span class='highlight-green-tag'>When I finish my homework, I often clean my room and water the plants.</span>"},
+        "whyWrong": [
+          {"word": "Option B", "reason": "ngôi 'I' không chia thêm -s/-es."},
+          {"word": "Option C, D", "reason": "sai thì và sai cấu trúc song hành."}
+        ]
+      },
+      {
+        "id": 40,
+        "type": "Tự luận Phần 3 - Dựng câu hoàn chỉnh từ từ gợi ý",
+        "question": "Question 40 (Use the given words to make a meaningful sentence):<br>my family / share / chores / so / our home / always / look / clean / and / comfortable",
+        "options": [
+          {"key": "A", "text": "My family shares the chores, so our home always looks clean and comfortable."},
+          {"key": "B", "text": "My family share chores, so our home always look clean and comfortable."},
+          {"key": "C", "text": "My family shares the chores, so our home always looks cleanly and comfortably."},
+          {"key": "D", "text": "My family is sharing chores, so our home always looked clean and comfortable."}
+        ],
+        "correct": "A",
+        "trans": "Dịch: Gia đình tôi cùng chia sẻ công việc nhà, vì vậy ngôi nhà của chúng tôi luôn trông sạch sẽ và thoải mái.",
+        "analysis": [
+          {"word": "Option A", "badge": "chuẩn hòa hợp chủ vị & linking verb", "badgeType": "correct", "note": "= My family shares (hoặc share) the chores, so our home (số ít) always looks + adj (clean and comfortable)"},
+          {"word": "Option B", "badge": "chưa chia động từ 'look'", "badgeType": "wrong", "note": "= chủ ngữ 'our home' là ngôi thứ 3 số ít nên động từ 'look' bắt buộc phải thêm -s thành 'looks'"},
+          {"word": "Option C", "badge": "dùng trạng từ sau linking verb look", "badgeType": "wrong", "note": "= sau linking verb 'looks' (trông có vẻ) phải dùng tính từ 'clean and comfortable', không dùng trạng từ -ly"},
+          {"word": "Option D", "badge": "lệch thì quá khứ", "badgeType": "wrong", "note": "= có 'always' ở hiện tại không chia quá khứ 'looked'"}
+        ],
+        "whyCorrect": {"rule": "Hòa hợp chủ ngữ - vị ngữ & Cấu trúc 'look + Adjective':", "content": "1. Vế 1: <b>My family shares (hoặc share) the chores</b>.<br>2. Vế 2: Chủ ngữ <b>our home</b> là danh từ số ít + trạng từ tần suất <b>always</b> → động từ chia ngôi thứ 3 số ít: <b>looks</b>.<br>3. Sau động từ nối <b>looks</b> (trông như thế nào) phải giữ nguyên tính từ: <b>clean and comfortable</b>.<br>Câu hoàn chỉnh: <span class='highlight-green-tag'>My family shares the chores, so our home always looks clean and comfortable.</span>"},
+        "whyWrong": [
+          {"word": "Option B", "reason": "'our home' là số ít nên 'look' phải thêm -s thành 'looks'."},
+          {"word": "Option C", "reason": "sau linking verb 'looks' không dùng trạng từ 'cleanly and comfortably'."},
+          {"word": "Option D", "reason": "sai thì của động từ."}
+        ]
+      }
+    ];
+
+    const userAnswers = {};
+
+    function togglePassageView(qId) {
+      const el = document.getElementById('collapse_pass_' + qId);
+      const btn = document.getElementById('btn_toggle_' + qId);
+      if (el) {
+        if (el.style.display === 'block') {
+          el.style.display = 'none';
+          if (btn) btn.innerHTML = '📖 Xem lại đoạn văn bài đọc';
+        } else {
+          el.style.display = 'block';
+          if (btn) btn.innerHTML = '▲ Thu gọn đoạn văn bài đọc';
+        }
+      }
+    }
+
+    function renderQuiz() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      quizData.forEach((q) => {
+        if (q.is_first_in_passage && passagesData[q.is_first_in_passage]) {
+          const pass = passagesData[q.is_first_in_passage];
+          const passCard = document.createElement('div');
+          passCard.className = 'reading-passage-card';
+          passCard.id = 'passage_anchor_' + q.is_first_in_passage;
+          passCard.innerHTML = `
+            <div class="passage-header-top">
+              <div class="passage-title-badge">
+                <span>📖</span>
+                <span>${pass.title}</span>
+              </div>
+              <span class="passage-scope-badge">${pass.badge}</span>
+            </div>
+            <div class="passage-intro-text">
+              📌 ${pass.intro}
+            </div>
+            ${pass.content}
+            <div class="passage-prompt-banner">
+              <span>👉</span>
+              <span>Đọc kỹ đoạn văn phía trên và lần lượt chọn đáp án cho các câu hỏi theo thứ tự bên dưới:</span>
+            </div>
+          `;
+          container.appendChild(passCard);
+        }
+
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `qCard_${q.id}`;
+
+        let quickPassageHtml = '';
+        if (q.passage_key && passagesData[q.passage_key]) {
+          quickPassageHtml = `
+            <div>
+              <button class="btn-toggle-passage" id="btn_toggle_${q.id}" onclick="togglePassageView(${q.id})">
+                📖 Xem lại đoạn văn bài đọc
+              </button>
+              <div class="collapse-passage-box" id="collapse_pass_${q.id}">
+                <div style="font-weight:900; color:#D35400; margin-bottom:8px;">📖 ${passagesData[q.passage_key].title}:</div>
+                ${passagesData[q.passage_key].content}
+              </div>
+            </div>
+          `;
+        }
+
+        let optionsHtml = '';
+        q.options.forEach(opt => {
+          optionsHtml += `
+            <button class="option-btn" id="opt_${q.id}_${opt.key}" onclick="handleSelect(${q.id}, '${opt.key}')">
+              <span class="opt-key">${opt.key}</span>
+              <span class="opt-text">${opt.text}</span>
+            </button>
+          `;
+        });
+
+        let cardsHtml = '';
+        q.analysis.forEach(item => {
+          const isCorrect = item.badgeType === 'correct';
+          cardsHtml += `
+            <div class="exp-card-item">
+              <div class="exp-card-header">
+                <span class="card-word ${isCorrect ? 'word-correct' : 'word-wrong'}">${item.word}</span>
+                <span class="badge-pill ${isCorrect ? 'badge-pill-correct' : 'badge-pill-wrong'}">${item.badge}</span>
+              </div>
+              <div class="card-meaning">${item.note}</div>
+            </div>
+          `;
+        });
+
+        let whyWrongHtml = '';
+        q.whyWrong.forEach(item => {
+          whyWrongHtml += `
+            <div style="margin-bottom: 6px;">
+              <span class="wrong-key-pill">${item.word}</span> – ${item.reason}
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="q-number-pill">Câu ${q.id} / 40</span>
+            <span class="q-tag-pill">${q.type}</span>
+          </div>
+          <div class="q-text">
+            ${q.question}
+            ${q.subtext ? `<div style="margin-top: 8px; color: #333; background: #F8F9FA; padding: 10px 14px; border-radius: 12px; border-left: 4px solid #0984E3;">${q.subtext}</div>` : ''}
+          </div>
+          ${quickPassageHtml}
+          <div class="options-grid ${q.options.length === 4 ? 'grid-2col' : ''}">
+            ${optionsHtml}
+          </div>
+
+          <!-- Explanation Container -->
+          <div class="explanation-container" id="exp_${q.id}">
+            <div class="exp-title-row">
+              <span>⚡ GIẢI THÍCH CHI TIẾT</span>
+            </div>
+
+            <!-- Translation bubble -->
+            <div class="exp-trans-box">
+              <span style="font-size: 1.2rem;">💬</span>
+              <div>${q.trans}</div>
+            </div>
+
+            <!-- 1. Phân tích 4 đáp án -->
+            <div class="exp-section-title">
+              <span>1. Phân tích 4 đáp án:</span>
+            </div>
+            <div class="exp-grid-cards">
+              ${cardsHtml}
+            </div>
+
+            <!-- 2. Tại sao đúng? -->
+            <div class="exp-block">
+              <div style="font-weight: 900; color: #00BA66; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <span>2. ✅ TẠI SAO ĐÚNG?</span>
+                <span class="rule-tag">${q.whyCorrect.rule}</span>
+              </div>
+              <div style="color: #2D3436; padding-left: 22px;">
+                ${q.whyCorrect.content}
+              </div>
+            </div>
+
+            <!-- 3. Tại sao sai? -->
+            <div class="exp-block" style="margin-bottom: 0;">
+              <div style="font-weight: 900; color: #FF4757; margin-bottom: 4px;">
+                <span>3. ❌ TẠI SAO SAI?</span>
+              </div>
+              <div style="color: #4A4A4A; padding-left: 22px;">
+                ${whyWrongHtml}
+              </div>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleSelect(questionId, selectedKey) {
+      const q = quizData.find(item => item.id === questionId);
+      if (!q) return;
+
+      userAnswers[questionId] = selectedKey;
+      const isCorrect = selectedKey === q.correct;
+
+      q.options.forEach(opt => {
+        const btn = document.getElementById(`opt_${q.id}_${opt.key}`);
+        if (!btn) return;
+        btn.classList.remove('selected-correct', 'selected-wrong', 'show-truth');
+
+        if (opt.key === selectedKey) {
+          if (isCorrect) {
+            btn.classList.add('selected-correct');
+          } else {
+            btn.classList.add('selected-wrong');
+          }
+        } else if (opt.key === q.correct) {
+          btn.classList.add('show-truth');
+        }
+      });
+
+      if (isCorrect) {
+        playDing();
+        triggerConfetti(45);
+      } else {
+        playWrongSound();
+      }
+
+      const expBox = document.getElementById(`exp_${q.id}`);
+      if (expBox) {
+        expBox.style.display = 'block';
+      }
+
+      updateTopStats();
+    }
+
+    function updateTopStats() {
+      let correct = 0;
+      let totalAnswered = 0;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] !== undefined) {
+          totalAnswered++;
+          if (userAnswers[q.id] === q.correct) {
+            correct++;
+          }
+        }
+      });
+
+      document.getElementById('correctScore').textContent = correct;
+      document.getElementById('answeredCount').textContent = totalAnswered;
+
+      const pct = (totalAnswered / quizData.length) * 100;
+      document.getElementById('progressBar').style.width = `${pct}%`;
+    }
+
+    function calculateAndShowResult() {
+      let correct = 0;
+      const total = quizData.length;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] === q.correct) {
+          correct++;
+        }
+      });
+
+      const percentage = Math.round((correct / total) * 100);
+
+      document.getElementById('modalPercent').textContent = `${percentage}%`;
+      document.getElementById('modalFraction').textContent = `Đúng ${correct} / ${total} câu`;
+
+      const teacherQuoteEl = document.getElementById('modalTeacherQuote');
+      const trophyEl = document.getElementById('modalTrophy');
+
+      if (percentage < 50) {
+        trophyEl.textContent = '🌱';
+        teacherQuoteEl.textContent = '“Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else if (percentage >= 50 && percentage < 90) {
+        trophyEl.textContent = '🌟';
+        teacherQuoteEl.textContent = '“Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else {
+        trophyEl.textContent = '🏆';
+        teacherQuoteEl.textContent = '“Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!”';
+        triggerConfetti(120);
+      }
+
+      document.getElementById('scoreModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('scoreModal').classList.remove('active');
+    }
+
+    function restartQuiz() {
+      for (const k in userAnswers) {
+        delete userAnswers[k];
+      }
+      closeModal();
+      renderQuiz();
+      updateTopStats();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function initAppNow() {
+      initBackgroundElements();
+      renderQuiz();
+      updateTopStats();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAppNow);
+    } else {
+      initAppNow();
+    }
+  </script>
+</body>
+</html>
